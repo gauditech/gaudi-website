@@ -22,7 +22,7 @@ export default function Home() {
         <PageIllustration />
       </div>
       <Hero />
-      <Stats />
+      {/* <Stats /> */}
       <Carousel />
       <Tabs />
       <Process />
