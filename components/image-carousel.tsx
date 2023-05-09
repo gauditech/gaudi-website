@@ -33,7 +33,7 @@ export default function Carousel(props: Props) {
           {props.elements.map(({ image }) => (
             <SwiperSlide>
               <Image
-                className="transition-opacity opacity-70 duration-300"
+                className="transition-opacity opacity-70 duration-300 rounded-2xl"
                 src={image}
                 width={540}
                 height={460}

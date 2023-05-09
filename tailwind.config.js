@@ -11,6 +11,11 @@ module.exports = {
       boxShadow: {
         '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.08)',
       },
+      rounded: {
+        'xl': '1rem',
+        '2xl': '2rem',
+        '3xl': '3rem'
+      },
       colors: {
         gray: {
           50: '#FAFAFA',
