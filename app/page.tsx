@@ -13,6 +13,7 @@ import PricingTables from '@/components/pricing-tables'
 import TestimonialsBlocks from '@/components/testimonials-blocks'
 import FeaturesBlocks from '@/components/features-blocks'
 import Cta from '@/components/cta'
+import Sections from '@/components/sections'
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       </div>
       <Hero />
       {/* <Stats /> */}
+      <Sections />
       <Carousel />
       <Tabs />
       <Process />
