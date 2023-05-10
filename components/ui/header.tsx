@@ -1,29 +1,11 @@
 import Link from "next/link";
 import Logo from "./logo";
-import Dropdown from "@/components/utils/dropdown";
-import ThemeToggle from "./theme-toggle";
 import MobileMenu from "./mobile-menu";
-import { MouseEvent, useCallback, useRef } from "react";
+import { MouseEvent, useCallback } from "react";
+import { smoothNavigation } from "@/components/utils/navigation";
 
 export default function Header() {
-  const navigationClickHandler = useCallback(
-    (e: MouseEvent<HTMLAnchorElement>) => {
-      // href looks like this `httpa://domain#href` but we need only the "#..." part
-      const href = "#" + e.currentTarget.href.split("#")[1];
-
-      if (!href.includes("/")) {
-        e.preventDefault();
-      }
-
-      const offsetTop = document.querySelector<HTMLDivElement>(href)?.offsetTop;
-
-      scroll({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    },
-    []
-  );
+  const navigationClickHandler = useCallback(smoothNavigation, []);
 
   return (
     <header className="absolute w-full z-30">
