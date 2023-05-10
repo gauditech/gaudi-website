@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Home - Appy",
-  description: "Page description",
+  title: "Home - Gaudi",
+  description: "Gaudi home page",
 };
 
 import PageIllustration from "@/components/page-illustration";
@@ -8,7 +8,6 @@ import Hero from "@/components/hero-home";
 import Sections from "@/components/whatisgaudi";
 import HowItWorks from "@/components/howitworks";
 import MailinglistCta from "@/components/mailinglist-cta";
-import Newsletter from "@/components/newsletter";
 
 export default function Home() {
   return (
@@ -31,9 +30,13 @@ export default function Home() {
 
       <Hero />
 
+      <div id="what-is-gaudi"></div>
       <Sections />
+
+      <div id="how-it-works"></div>
       <HowItWorks />
-      <Newsletter />
+
+      <div id="contact"></div>
       <MailinglistCta />
     </>
   );

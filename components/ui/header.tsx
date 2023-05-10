@@ -3,8 +3,28 @@ import Logo from "./logo";
 import Dropdown from "@/components/utils/dropdown";
 import ThemeToggle from "./theme-toggle";
 import MobileMenu from "./mobile-menu";
+import { MouseEvent, useCallback, useRef } from "react";
 
 export default function Header() {
+  const navigationClickHandler = useCallback(
+    (e: MouseEvent<HTMLAnchorElement>) => {
+      // href looks like this `httpa://domain#href` but we need only the "#..." part
+      const href = "#" + e.currentTarget.href.split("#")[1];
+
+      if (!href.includes("/")) {
+        e.preventDefault();
+      }
+
+      const offsetTop = document.querySelector<HTMLDivElement>(href)?.offsetTop;
+
+      scroll({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    },
+    []
+  );
+
   return (
     <header className="absolute w-full z-30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -21,62 +41,30 @@ export default function Header() {
             {/* Desktop menu links */}
             <ul className="flex grow flex-wrap items-center font-medium">
               <li>
-                <Link
-                  href="/about"
+                <a
+                  href="#what-is-gaudi"
+                  onClick={navigationClickHandler}
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
                 >
-                  About
-                </Link>
+                  Gaudi
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  onClick={navigationClickHandler}
+                  className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                >
+                  How it works
+                </a>
               </li>
               <li>
                 <Link
-                  href="/blog"
+                  href="#contact"
+                  onClick={navigationClickHandler}
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
                 >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/testimonials"
-                  className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
-                >
-                  Testimonials
-                </Link>
-              </li>
-              {/* 1st level: hover */}
-              <Dropdown title="Resources">
-                {/* 2nd level: hover */}
-                <li>
-                  <Link
-                    href="/help"
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-500 flex py-2 px-4 leading-tight"
-                  >
-                    Help center
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/404"
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-500 flex py-2 px-4 leading-tight"
-                  >
-                    404
-                  </Link>
-                </li>
-              </Dropdown>
-            </ul>
-
-            {/* Desktop lights switch */}
-            <ThemeToggle className="ml-3" />
-
-            {/* Desktop CTA on the right */}
-            <ul className="flex justify-end flex-wrap items-center">
-              <li>
-                <Link
-                  href="/contact"
-                  className="btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6"
-                >
-                  Request code
+                  Contact
                 </Link>
               </li>
             </ul>
