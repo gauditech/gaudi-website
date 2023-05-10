@@ -1,5 +1,5 @@
-import HeroBgModels from "@/public/images/gaudi/hero_models.png";
-import HeroBgEntry from "@/public/images/gaudi/hero_entrypoints.png";
+import HeroBgModels from "@/public/images/screenshots/hero_models.png";
+import HeroBgEntry from "@/public/images/screenshots/hero_entrypoints.png";
 import ImageCarousel from "@/components/image-carousel";
 import Link from "next/link";
 import { ReactNode } from "react";

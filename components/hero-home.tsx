@@ -1,8 +1,5 @@
-import VideoThumb from "@/public/images/mockup-image-01.jpg";
-import ModalVideoIphone from "@/components/modal-video-iphone";
-import HeroBgModels from "@/public/images/gaudi/hero_models.png";
-import HeroBgEntry from "@/public/images/gaudi/hero_entrypoints.png";
-import Image from "next/image";
+import HeroBgModels from "@/public/images/screenshots/hero_models.png";
+import HeroBgEntry from "@/public/images/screenshots/hero_entrypoints.png";
 import ImageCarousel from "@/components/image-carousel";
 import Link from "next/link";
 
