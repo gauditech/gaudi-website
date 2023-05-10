@@ -11,7 +11,7 @@ export default function WhatIsGaudi() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
-        className="h2 -mb-40 font-red-hat-display font-black text-center"
+        className="h2 font-red-hat-display font-black text-center"
         data-aos="fade-down"
       >
         What is Gaudi?
@@ -153,7 +153,7 @@ function Section(props: SectionProps) {
   };
 
   return (
-    <section className="relative mt-30 md:mt-60">
+    <section className="relative mt-20 md:mt-60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
           {/* text */}
