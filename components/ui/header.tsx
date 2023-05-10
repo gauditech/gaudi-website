@@ -1,18 +1,17 @@
-import Link from 'next/link'
-import Logo from './logo'
-import Dropdown from '@/components/utils/dropdown'
-import ThemeToggle from './theme-toggle'
-import MobileMenu from './mobile-menu'
+import Link from "next/link";
+import Logo from "./logo";
+import Dropdown from "@/components/utils/dropdown";
+import ThemeToggle from "./theme-toggle";
+import MobileMenu from "./mobile-menu";
 
 export default function Header() {
   return (
     <header className="absolute w-full z-30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
-
           {/* Site branding */}
-          <div className="shrink-0 mr-5">
-            <Link href="/" className="block" aria-label="Cruip">
+          <div className="shrink-0 mr-5 h-10">
+            <Link href="/" className="block h-full" aria-label="Cruip">
               <Logo />
             </Link>
           </div>
@@ -73,7 +72,10 @@ export default function Header() {
             {/* Desktop CTA on the right */}
             <ul className="flex justify-end flex-wrap items-center">
               <li>
-                <Link href="/contact" className="btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6">
+                <Link
+                  href="/contact"
+                  className="btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6"
+                >
                   Request code
                 </Link>
               </li>
@@ -81,9 +83,8 @@ export default function Header() {
           </nav>
 
           <MobileMenu />
-
         </div>
       </div>
     </header>
-  )
+  );
 }
