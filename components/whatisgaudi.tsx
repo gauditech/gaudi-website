@@ -7,7 +7,7 @@ import { StaticImageData } from "next/image";
 
 type SectionOrientation = "right" | "left";
 
-export default function Sections() {
+export default function WhatIsGaudi() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
@@ -19,7 +19,7 @@ export default function Sections() {
 
       <Section
         orientation="left"
-        title="It's a programming language"
+        title="It's a language"
         textContent={
           <>
             Gaudi is a declarative, domain specific, type safe programming
@@ -109,9 +109,14 @@ type SectionProps = {
 function Section(props: SectionProps) {
   const descriptionPart = (
     <div>
-      <h3 className="h3 font-red-hat-display mb-4">{props.title}</h3>
+      <h3 className="h3 font-red-hat-display mb-4" data-aos="fade-down">
+        {props.title}
+      </h3>
 
-      <p className="text-xl text-gray-600 dark:text-gray-400">
+      <p
+        className="text-xl text-gray-600 dark:text-gray-400"
+        data-aos="fade-left"
+      >
         {props.textContent}
       </p>
 

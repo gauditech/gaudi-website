@@ -5,7 +5,7 @@ export const metadata = {
 
 import PageIllustration from "@/components/page-illustration";
 import Hero from "@/components/hero-home";
-import Sections from "@/components/whatisgaudi";
+import WhatIsGaudi from "@/components/whatisgaudi";
 import HowItWorks from "@/components/howitworks";
 import MailinglistCta from "@/components/mailinglist-cta";
 
@@ -31,7 +31,7 @@ export default function Home() {
       <Hero />
 
       <div id="what-is-gaudi"></div>
-      <Sections />
+      <WhatIsGaudi />
 
       <div id="how-it-works"></div>
       <HowItWorks />

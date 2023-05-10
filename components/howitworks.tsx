@@ -27,7 +27,10 @@ export default function HowItWorks() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-6">
               {/* Category buttons */}
               <div className="lg:col-span-1 lg:pr-16 flex flex-wrap justify-center lg:flex-col lg:justify-start -m-1 lg:mx-0">
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p
+                  className="text-xl text-gray-600 dark:text-gray-400"
+                  data-aos="fade-right"
+                >
                   Create a simple source file where you describe your
                   application, its models, relations and APIs using Gaudi
                   language. Using that file Gaudi will build your app that runs
