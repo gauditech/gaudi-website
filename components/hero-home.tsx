@@ -48,7 +48,7 @@ export default function HeroHome() {
 
             {/* Background gradient (light version only) */}
             <div
-              className="absolute inset-0 -z-1 bg-gradient-to-t from-gray-100 to-white pointer-events-none dark:hidden"
+              className="absolute inset-0 -z-[2] bg-gradient-to-t from-gray-100 to-white pointer-events-none dark:hidden"
               aria-hidden="true"
             ></div>
 

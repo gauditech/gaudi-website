@@ -12,16 +12,13 @@ import MailinglistCta from "@/components/mailinglist-cta";
 export default function Home() {
   return (
     <>
-      {/* page decorations */}
-      <>
-        {/*  Page illustration */}
-        <div
-          className="relative max-w-6xl mx-auto h-0 pointer-events-none -z-1"
-          aria-hidden="true"
-        >
-          <PageIllustration />
-        </div>
-      </>
+      {/*  Page illustration */}
+      <div
+        className="relative max-w-6xl mx-auto h-0 pointer-events-none -z-1"
+        aria-hidden="true"
+      >
+        <PageIllustration />
+      </div>
 
       <Hero />
 
