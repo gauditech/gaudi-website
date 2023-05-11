@@ -13,7 +13,7 @@ export default function HeroHome() {
             {/* Content */}
             <div className="md:col-span-7 lg:col-span-7 mb-8 md:mb-0 text-center md:text-left">
               <h1
-                className="h1 lg:text-6xl mb-4 font-red-hat-display font-black"
+                className="h1 lg:text-5xl xl:text-6xl mb-4 font-red-hat-display font-black"
                 data-aos="fade-down"
               >
                 Build your app in a{" "}
@@ -46,6 +46,12 @@ export default function HeroHome() {
               </div>
             </div>
 
+            {/* Background gradient (light version only) */}
+            <div
+              className="absolute inset-0 -z-1 bg-gradient-to-t from-gray-100 to-white pointer-events-none dark:hidden"
+              aria-hidden="true"
+            ></div>
+
             {/* hero image */}
             <div
               className="md:col-span-5 lg:col-span-5 text-center md:text-right"
@@ -57,10 +63,6 @@ export default function HeroHome() {
                 <ImageCarousel
                   elements={[{ image: HeroBgModels }, { image: HeroBgEntry }]}
                 />
-                <div
-                  className="bg-gradient-to-t from-white dark:from-gray-900"
-                  aria-hidden="true"
-                ></div>
               </div>
             </div>
           </div>

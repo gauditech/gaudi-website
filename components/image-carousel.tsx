@@ -11,11 +11,12 @@ import "swiper/css/effect-coverflow";
 
 type Props = {
   elements: { image: StaticImageData }[];
+  className?: string;
 };
 
 export default function Carousel(props: Props) {
   return (
-    <section className="border-t border-transparent dark:border-gray-800">
+    <section className={`shadow-xl rounded-xl ${props.className ?? ""}`}>
       {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
       {/* * Custom styles in src/css/additional-styles/theme.scss */}
       <Swiper
@@ -24,16 +25,13 @@ export default function Carousel(props: Props) {
         autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
         speed={1000}
         grabCursor={true}
-        spaceBetween={24}
         effect="coverflow"
       >
         {props.elements.map(({ image }) => (
           <SwiperSlide>
             <Image
-              className="transition-opacity opacity-70 duration-300 rounded-2xl"
+              className="transition-opacity duration-300 rounded-xl"
               src={image}
-              width={540}
-              height={460}
               alt="Carousel item 01"
             />
           </SwiperSlide>

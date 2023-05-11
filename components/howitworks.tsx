@@ -28,7 +28,7 @@ export default function HowItWorks() {
               {/* Category buttons */}
               <div className="lg:col-span-1 lg:pr-16 flex flex-wrap justify-center lg:flex-col lg:justify-start -m-1 lg:mx-0">
                 <p
-                  className="text-xl text-gray-600 dark:text-gray-400"
+                  className="text-gray-600 dark:text-gray-400"
                   data-aos="fade-right"
                 >
                   Create a simple source file where you describe your

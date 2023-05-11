@@ -11,7 +11,7 @@ export default function WhatIsGaudi() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
-        className="h2 font-red-hat-display font-black text-center"
+        className="h2 font-red-hat-display font-black text-center -mb-10 md:-mb-20"
         data-aos="fade-down"
       >
         What is Gaudi?
@@ -129,10 +129,7 @@ function Section(props: SectionProps) {
         {props.title}
       </h3>
 
-      <p
-        className="text-xl text-gray-600 dark:text-gray-400"
-        data-aos="fade-left"
-      >
+      <p className="text-gray-600 dark:text-gray-400" data-aos="fade-left">
         {props.textContent}
       </p>
 
@@ -150,6 +147,7 @@ function Section(props: SectionProps) {
   );
   const imagePart = (
     <ImageCarousel
+      className="mx-8 md:mx-0"
       elements={props.imageContent.map((img) => ({ image: img }))}
     />
   );
@@ -169,7 +167,7 @@ function Section(props: SectionProps) {
   };
 
   return (
-    <section className="relative mt-20 md:mt-60">
+    <section className="relative mt-20 md:mt-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
           {/* text */}
@@ -206,8 +204,8 @@ function SectionIllustration(props: SectionIllustrationProps) {
   }
 
   const variants = {
-    left: "-left-20 md:-left-40",
-    right: "-left-20 md:left-auto md:-right-40 md:-scale-x-100",
+    right: "-left-20 md:-left-40",
+    left: "-left-20 md:left-auto md:-right-40 md:-scale-x-100",
   };
 
   return (

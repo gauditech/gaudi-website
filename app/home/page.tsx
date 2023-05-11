@@ -14,11 +14,6 @@ export default function Home() {
     <>
       {/* page decorations */}
       <>
-        {/* Background gradient (light version only) */}
-        <div
-          className="absolute inset-0 -z-1 bg-gradient-to-b from-gray-100 to-white pointer-events-none dark:hidden"
-          aria-hidden="true"
-        ></div>
         {/*  Page illustration */}
         <div
           className="relative max-w-6xl mx-auto h-0 pointer-events-none -z-1"
