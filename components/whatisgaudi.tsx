@@ -148,7 +148,10 @@ function Section(props: SectionProps) {
   const imagePart = (
     <ImageCarousel
       className="mx-8 md:mx-0"
-      elements={props.imageContent.map((img) => ({ image: img }))}
+      elements={props.imageContent.map((img, idx) => ({
+        key: `${img.src}-${idx}`,
+        image: img,
+      }))}
     />
   );
 

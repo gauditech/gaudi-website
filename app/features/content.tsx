@@ -146,7 +146,7 @@ export default function FeaturesContent() {
             {/* Articles */}
             <div className="-mb-2">
               {categoryFeatures.map((feature) => (
-                <Feature {...feature} />
+                <Feature {...feature} key={feature.key} />
               ))}
               {categoryFeatures.length === 0 && (
                 <div className="md:flex md:items-center md:justify-center">
@@ -188,6 +188,7 @@ function CategoryFilterButton(props: CategoryFilterButtonProps) {
 }
 
 type FeatureProps = {
+  key: string;
   categories: FeatureCategory[];
   icon: ReactNode;
   title: ReactNode;
@@ -197,7 +198,7 @@ type FeatureProps = {
 
 function Feature(props: FeatureProps) {
   return (
-    <article className="mb-2">
+    <article id={props.key} className="mb-2">
       <div className="flex pr-6 py-5 bg-white dark:bg-gray-800 divide-x divide-gray-200 dark:divide-gray-700 shadow-2xl">
         {/* Category icon */}
         <div className="flex items-center px-4 sm:px-8">{props.icon}</div>
@@ -229,7 +230,7 @@ function Feature(props: FeatureProps) {
           )}
           <footer className="text-sm flex items-center mt-3">
             {props.categories.map((cat) => (
-              <FeatureCategory type={cat} />
+              <FeatureCategory key={cat} type={cat} />
             ))}
           </footer>
         </div>
@@ -261,6 +262,7 @@ function FeatureCategory(props: FeatureCategoryProps) {
 
 const FEATURES: FeatureProps[] = [
   {
+    key: "programming-language",
     title: "Dedicated programming language",
     content:
       "Complete freedom to design a language for the best developer experience we can imagine!",
@@ -269,6 +271,7 @@ const FEATURES: FeatureProps[] = [
     link: "https://example.com",
   },
   {
+    key: "language-compiler",
     title: "Compiler & type-checker",
     content:
       "Gaudi runs various compile-time checks that help you make less mistakes during development",
@@ -277,6 +280,7 @@ const FEATURES: FeatureProps[] = [
     link: "https://example.com",
   },
   {
+    key: "authentication",
     title: "Authentication",
     content: "Support local auth (username & password), Supertokens, Auth0",
     categories: ["runtime"],
