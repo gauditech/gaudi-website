@@ -1,17 +1,34 @@
 import { MouseEvent } from "react";
 
 export function smoothNavigation(e: MouseEvent<HTMLAnchorElement>) {
-  // href looks like this `httpa://domain#href` but we need only the "#..." part
-  const href = "#" + e.currentTarget.href.split("#")[1];
+  const targetHref = e.currentTarget.href;
+  const currentHref = window.location.href;
 
-  if (!href.includes("/")) {
-    e.preventDefault();
+  // take URLs without the hash part
+  const targetUrl = targetHref.split("#")[0];
+  const currentUrl = currentHref.split("#")[0];
+
+  if (targetUrl !== currentUrl) {
+    // URL bases are different so it's not an internal link, proceed with the default navigation
+    return;
   }
 
-  const offsetTop = document.querySelector<HTMLDivElement>(href)?.offsetTop;
+  // take the hash
+  const targetHash = e.currentTarget.href.split("#")[1];
 
-  scroll({
-    top: offsetTop,
-    behavior: "smooth",
-  });
+  // find element by ID and measure it's offset form top so we know where to scroll
+  const offsetTop = document.querySelector<HTMLDivElement>(
+    `#${targetHash}`
+  )?.offsetTop;
+
+  if (offsetTop != null) {
+    // prevent default so we can do the nav
+    e.preventDefault();
+
+    scroll({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  }
+  // otherwise, just allow default behaviour
 }
