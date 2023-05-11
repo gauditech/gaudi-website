@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo from "./logo";
 import MobileMenu from "./mobile-menu";
-import { MouseEvent, useCallback } from "react";
+import { useCallback } from "react";
 import { smoothNavigation } from "@/components/utils/navigation";
 
 export default function Header() {
@@ -24,16 +24,16 @@ export default function Header() {
             <ul className="flex grow flex-wrap items-center font-medium">
               <li>
                 <a
-                  href="#what-is-gaudi"
+                  href="/#what-is-gaudi"
                   onClick={navigationClickHandler}
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
                 >
-                  Gaudi
+                  About
                 </a>
               </li>
               <li>
                 <a
-                  href="#how-it-works"
+                  href="/#how-it-works"
                   onClick={navigationClickHandler}
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
                 >
@@ -42,11 +42,19 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   onClick={navigationClickHandler}
                   className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
                 >
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/features"
+                  className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                >
+                  Features
                 </Link>
               </li>
             </ul>
