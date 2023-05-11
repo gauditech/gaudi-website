@@ -19,7 +19,11 @@ export default function WhatIsGaudi() {
 
       <Section
         orientation="left"
-        title="It's a language"
+        title={
+          <>
+            It's a <span className="text-teal-500">language</span>
+          </>
+        }
         textContent={
           <>
             Gaudi is a declarative, domain specific, type safe programming
@@ -40,7 +44,11 @@ export default function WhatIsGaudi() {
 
       <Section
         orientation="right"
-        title="It's a development kit"
+        title={
+          <>
+            It's a <span className="text-teal-500">development kit</span>
+          </>
+        }
         textContent={
           <>
             Gaudi provides a set of tools that supercharge your development
@@ -60,7 +68,11 @@ export default function WhatIsGaudi() {
 
       <Section
         orientation="left"
-        title="It's a runtime"
+        title={
+          <>
+            It's a <span className="text-teal-500">runtime</span>
+          </>
+        }
         textContent={
           <>
             Gaudi runs your app in a highly optimized web server environment
@@ -80,7 +92,11 @@ export default function WhatIsGaudi() {
 
       <Section
         orientation="right"
-        title="It's an infrastructure"
+        title={
+          <>
+            It's an <span className="text-teal-500">infrastructure</span>
+          </>
+        }
         textContent={
           <>
             <span className="tags-animation">#Future plan#</span>
@@ -101,7 +117,7 @@ export default function WhatIsGaudi() {
 
 type SectionProps = {
   orientation: SectionOrientation;
-  title: string;
+  title: ReactNode;
   textContent: ReactNode;
   ctaText?: ReactNode;
   imageContent: StaticImageData[];
