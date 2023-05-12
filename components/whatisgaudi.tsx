@@ -9,9 +9,9 @@ type SectionOrientation = "right" | "left";
 
 export default function WhatIsGaudi() {
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <section className="my-4 md:my-20">
       <h2
-        className="h2 font-red-hat-display font-black text-center -mb-10 md:-mb-20"
+        className="max-w-6xl mx-auto h2 font-red-hat-display font-black text-center -mb-10 md:-mb-20"
         data-aos="fade-down"
       >
         What is Gaudi?
@@ -171,7 +171,7 @@ function Section(props: SectionProps) {
 
   return (
     <section className="relative mt-20 md:mt-40">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-6xl mx-auto">
         <div className="md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
           {/* text */}
           <div className={`${variants.columns.text}`}>{descriptionPart}</div>
@@ -179,9 +179,8 @@ function Section(props: SectionProps) {
           {/* image */}
           <div className={`${variants.columns.image}`}>{imagePart}</div>
         </div>
+        <SectionIllustration orientation={props.orientation} />
       </div>
-
-      <SectionIllustration orientation={props.orientation} />
     </section>
   );
 }
@@ -197,74 +196,129 @@ function SectionIllustration(props: SectionIllustrationProps) {
   if (props.orientation === "left") {
     // purple
     sectionColor1 = "#667EEA";
-    sectionColor2 = "#3ABAB4";
-    // sectionColor2 = "#9F7AEA";
+    // sectionColor2 = "#3ABAB4";
+    sectionColor2 = "#9F7AEA";
   } else {
     // green
     sectionColor1 = "#3ABAB4";
-    // sectionColor2 = "#3ABAB4";
-    sectionColor2 = "#9F7AEA";
+    sectionColor2 = "#3ABAB4";
+    // sectionColor2 = "#9F7AEA";
   }
 
   const variants = {
-    right: "-left-20 md:-left-40",
-    left: "-left-20 md:left-auto md:-right-40 md:-scale-x-100",
+    right: "-top-20 -left-20 md:-left-40",
+    left: "-top-20 -left-20 md:left-auto md:-right-40 md:-scale-x-100",
   };
 
   return (
-    <>
-      {/* Glow illustration */}
-      <svg
-        className={`${
-          variants[props.orientation]
-        } absolute -top-20 md:-top-40 pointer-events-none -z-1 dark:opacity-20 hidden md:block`}
-        aria-hidden="true"
-        width={854}
-        height="509"
-        viewBox="0 0 854 509"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <radialGradient
-            cx="50%"
-            cy="50%"
-            fx="50%"
-            fy="50%"
-            r="39.386%"
-            id={`${sectionColorId}__a`}
-          >
-            <stop stopColor={sectionColor1} offset="0%" />
-            <stop stopColor={sectionColor1} stopOpacity="0" offset="100%" />
-          </radialGradient>
-          <radialGradient
-            cx="50%"
-            cy="50%"
-            fx="50%"
-            fy="50%"
-            r="39.386%"
-            id={`${sectionColorId}__b`}
-          >
-            <stop stopColor={sectionColor2} offset="0%" />
-            <stop stopColor={sectionColor2} stopOpacity="0" offset="100%" />
-          </radialGradient>
-        </defs>
-        <g transform="translate(-64 -64)" fill="none" fillRule="evenodd">
-          <circle
-            fillOpacity=".64"
-            fill={`url(#${sectionColorId}__a`}
-            cx="300"
-            cy="300"
-            r="300"
+    <svg
+      className={`absolute  ${variants[props.orientation]}`}
+      width="594"
+      height="548"
+      viewBox="0 0 594 548"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter={`url(#${sectionColorId}_filter_0)`}>
+        <rect
+          x="26.4939"
+          y="74.1213"
+          width="500"
+          height="450"
+          rx="80"
+          transform="rotate(-5.52628 26.4939 74.1213)"
+          fill={`url(#${sectionColorId}_paint_radial_0)`}
+        />
+      </g>
+      <defs>
+        <filter
+          id={`${sectionColorId}_filter_0`}
+          x="0.706787"
+          y="0.18306"
+          width="592.586"
+          height="547.634"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
           />
-          <circle
-            fillOpacity=".72"
-            fill={`url(#${sectionColorId}__b`}
-            cx="729"
-            cy="384"
-            r="240"
+          <feGaussianBlur
+            stdDeviation="15"
+            result="effect1_foregroundBlur_120_25"
           />
-        </g>
-      </svg>
-    </>
+        </filter>
+        <radialGradient
+          id={`${sectionColorId}_paint_radial_0`}
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(276.494 299.121) rotate(90) scale(325.5 361.667)"
+        >
+          <stop stop-color={`${sectionColor1}`} />
+          <stop offset="1" stop-color={`${sectionColor2}`} stop-opacity="0.2" />
+        </radialGradient>
+      </defs>
+    </svg>
+
+    // <>
+    //   {/* Glow illustration */}
+    //   <svg
+    //     className={`${
+    //       variants[props.orientation]
+    //     } absolute -top-20 md:-top-40 pointer-events-none -z-1 dark:opacity-20 hidden md:block`}
+    //     aria-hidden="true"
+    //     width={854}
+    //     height="509"
+    //     viewBox="0 0 854 509"
+    //     xmlns="http://www.w3.org/2000/svg"
+    //   >
+    //     <defs>
+    //       <radialGradient
+    //         cx="50%"
+    //         cy="50%"
+    //         fx="50%"
+    //         fy="50%"
+    //         r="39.386%"
+    //         id={`${sectionColorId}__a`}
+    //       >
+    //         <stop stopColor={sectionColor1} offset="0%" />
+    //         <stop stopColor={sectionColor1} stopOpacity="0" offset="100%" />
+    //       </radialGradient>
+    //       <radialGradient
+    //         cx="50%"
+    //         cy="50%"
+    //         fx="50%"
+    //         fy="50%"
+    //         r="39.386%"
+    //         id={`${sectionColorId}__b`}
+    //       >
+    //         <stop stopColor={sectionColor2} offset="0%" />
+    //         <stop stopColor={sectionColor2} stopOpacity="0" offset="100%" />
+    //       </radialGradient>
+    //     </defs>
+    //     <g transform="translate(-64 -64)" fill="none" fillRule="evenodd">
+    //       <circle
+    //         fillOpacity=".64"
+    //         fill={`url(#${sectionColorId}__a`}
+    //         cx="300"
+    //         cy="300"
+    //         r="300"
+    //       />
+    //       <circle
+    //         fillOpacity=".72"
+    //         fill={`url(#${sectionColorId}__b`}
+    //         cx="729"
+    //         cy="384"
+    //         r="240"
+    //       />
+    //     </g>
+    //   </svg>
+    // </>
   );
 }
