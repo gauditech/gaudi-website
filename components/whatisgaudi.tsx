@@ -1,60 +1,53 @@
-import HeroBgModels from "@/public/images/screenshots/hero_models.png";
-import HeroBgEntry from "@/public/images/screenshots/hero_entrypoints.png";
+import HeroBgModels from "@/public/images/screenshots/hero_models2.png";
+import HeroBgEntry from "@/public/images/screenshots/hero_entrypoints2.png";
+import GaudiBookreviewsModels from "@/public/images/screenshots/hero_models2.png";
 import ImageCarousel from "@/components/image-carousel";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { StaticImageData } from "next/image";
 
 type SectionOrientation = "right" | "left";
+type SectionType = "language" | "devtoolkit" | "runtime" | "infrastructure";
+type SectionTag = { text: string; link?: string };
 
 export default function WhatIsGaudi() {
   return (
-    <section className="my-4 md:my-20">
-      <h2
+    <section className="relative">
+      {/* <h2
         className="max-w-6xl mx-auto h2 font-red-hat-display font-black text-center -mb-10 md:-mb-20"
         data-aos="fade-down"
       >
         What is Gaudi?
-      </h2>
+      </h2> */}
 
       <Section
+        type="language"
         orientation="left"
-        title={
-          <>
-            It's a <span className="text-teal-500">language</span>
-          </>
-        }
+        supertitle="It's a language"
+        title='Describe "what", not "how"'
         textContent={
           <>
             Gaudi is a declarative, domain specific, type safe programming
             language that makes it easier to build and maintain web application
             backends.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus
-            nunc et velit malesuada, sit amet viverra augue auctor. Nullam
-            blandit ultrices nunc, non fermentum felis malesuada quis. Proin
-            maximus, leo vitae consequat blandit, quam orci dictum elit, sit
-            amet sollicitudin enim ante at nisl.
           </>
         }
         ctaText="Learn more"
-        imageContent={[HeroBgModels, HeroBgEntry]}
+        imageContent={[GaudiBookreviewsModels]}
+        tags={[
+          { text: "Feature 1" },
+          { text: "Feature two", link: "https://example.com" },
+          { text: "Feature three" },
+        ]}
       />
 
       <Section
+        type="devtoolkit"
         orientation="right"
-        title={
-          <>
-            It's a <span className="text-teal-500">development kit</span>
-          </>
-        }
+        supertitle="It's a development kit"
+        title="Supercharge your development"
         textContent={
           <>
-            Gaudi provides a set of tools that supercharge your development
-            experience.
-            <br />
-            <br />
             Out of the box you can run and automate commands using CLI,
             automatically create, migrate and populate your database, develop
             faster using development mode and generate type-safe APIs and
@@ -63,16 +56,19 @@ export default function WhatIsGaudi() {
           </>
         }
         ctaText="Explore more"
-        imageContent={[HeroBgModels, HeroBgEntry]}
+        imageContent={[HeroBgModels]}
+        tags={[
+          { text: "Feature 1" },
+          { text: "Feature two", link: "https://example.com" },
+          { text: "Feature three" },
+        ]}
       />
 
       <Section
+        type="runtime"
         orientation="left"
-        title={
-          <>
-            It's a <span className="text-teal-500">runtime</span>
-          </>
-        }
+        supertitle="It's a runtime"
+        title="Perfomance tailored for your app"
         textContent={
           <>
             Gaudi runs your app in a highly optimized web server environment
@@ -87,10 +83,18 @@ export default function WhatIsGaudi() {
           </>
         }
         ctaText="Read more"
-        imageContent={[HeroBgModels, HeroBgEntry]}
+        imageContent={[HeroBgEntry]}
+        tags={[
+          { text: "Runtime 1" },
+          { text: "Feature two", link: "https://example.com" },
+          { text: "Feature three" },
+          { text: "Feature four" },
+          { text: "Feature 5" },
+        ]}
       />
 
-      <Section
+      {/* <Section
+        type="infrastructure"
         orientation="right"
         title={
           <>
@@ -110,28 +114,82 @@ export default function WhatIsGaudi() {
           </>
         }
         imageContent={[HeroBgModels, HeroBgEntry]}
-      />
+      /> */}
     </section>
   );
 }
 
 type SectionProps = {
+  type: SectionType;
   orientation: SectionOrientation;
+  supertitle: ReactNode;
   title: ReactNode;
   textContent: ReactNode;
   ctaText?: ReactNode;
   imageContent: StaticImageData[];
+  tags?: SectionTag[];
 };
 function Section(props: SectionProps) {
+  // column styles
+  const colFirst = `col-span-6 md:order-1 text-left`;
+  const colSecond = `col-span-6 md:order-2 text-left`;
+
+  // bg colors
+  const colors = {
+    text: {
+      language: "text-gray-600 dark:text-gray-400",
+      devtoolkit: "text-gray-100 dark:text-gray-400",
+      runtime: "text-gray-600 dark:text-gray-400",
+      infrastructure: "text-gray-600 dark:text-gray-400",
+    },
+    bg: {
+      language: "bg-white",
+      devtoolkit: "bg-gray-800",
+      runtime: "bg-gradient-to-t from-indigo-100 to-white",
+      infrastructure: "bg-gradient-to-b from-white to-white",
+    },
+    illustration: {
+      language: "rgb(45 212 191)", // teal-300
+      devtoolkit: "rgb(209, 213, 219)", // bg-gray-300
+      runtime: "rgb(147, 197, 253)", // blue-300
+      infrastructure: "bg-gradient-to-b from-indigo-100 to-white",
+    },
+  };
+
+  // style variants
+  const variants = {
+    columns: {
+      // alternate order for each orientation
+      text: props.orientation === "left" ? colFirst : colSecond,
+      image: props.orientation === "left" ? colSecond : colFirst,
+    },
+    bg: {
+      gradient: [
+        // rounded corner
+        // props.orientation === "left"
+        //   ? "rounded-tl-[100px]"
+        //   : "rounded-tr-[100px]",
+
+        // color
+        colors.bg[props.type],
+      ].join(" "),
+    },
+  };
+
   const descriptionPart = (
-    <div>
+    <>
+      <h6
+        className={`h6 uppercase font-bold`}
+        style={{ color: colors.illustration[props.type] }}
+        data-aos="fade-down"
+      >
+        {props.supertitle}
+      </h6>
       <h3 className="h3 font-red-hat-display mb-4" data-aos="fade-down">
         {props.title}
       </h3>
 
-      <p className="text-gray-600 dark:text-gray-400" data-aos="fade-left">
-        {props.textContent}
-      </p>
+      <p data-aos="fade-left">{props.textContent}</p>
 
       {props.ctaText && (
         <div className="text-center">
@@ -143,11 +201,11 @@ function Section(props: SectionProps) {
           </Link>
         </div>
       )}
-    </div>
+    </>
   );
+
   const imagePart = (
     <ImageCarousel
-      className="mx-8 md:mx-0"
       elements={props.imageContent.map((img, idx) => ({
         key: `${img.src}-${idx}`,
         image: img,
@@ -155,71 +213,109 @@ function Section(props: SectionProps) {
     />
   );
 
-  // column styles
-  const colCommon = "md:col-span-6 text-left mt-auto mb-auto";
-  const colFirst = `${colCommon} md:order-1 md:text-right`;
-  const colSecond = `${colCommon} md:order-2 md:text-left`;
-
-  // style variants
-  const variants = {
-    columns: {
-      // alternate order for each orientation
-      text: props.orientation === "left" ? colFirst : colSecond,
-      image: props.orientation === "left" ? colSecond : colFirst,
-    },
-  };
-
   return (
-    <section className="relative mt-20 md:mt-40">
-      <div className="relative max-w-6xl mx-auto">
-        <div className="md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
+    <section type={props.type} className="relative px-5 md:px-6 py-10">
+      <div className={`max-w-6xl mx-auto ${colors.text[props.type]}`}>
+        <div className="md:grid gap-10 grid-cols-12 items-center">
           {/* text */}
-          <div className={`${variants.columns.text}`}>{descriptionPart}</div>
+          <div className={`${variants.columns.text} mb-10`}>
+            {descriptionPart}
+          </div>
 
           {/* image */}
-          <div className={`${variants.columns.image}`}>{imagePart}</div>
+          <div
+            className={`relative ${variants.columns.image} mx-10 md:mx-0`}
+            data-aos="fade-up"
+          >
+            {imagePart}
+            <SectionIllustration
+              orientation={props.orientation}
+              color={colors.illustration[props.type]}
+            />
+          </div>
         </div>
-        <SectionIllustration orientation={props.orientation} />
+
+        {/* feature tags */}
+        {props.tags && props.tags.length > 0 && (
+          <div
+            className={`${
+              props.orientation === "right" ? "md:ml-[50%]" : ""
+            } m-5`}
+          >
+            <h5
+              className={`h5 uppercase font-bold`}
+              style={{ color: colors.illustration[props.type] }}
+            >
+              Features
+            </h5>
+            <div className="flex gap-2 my-5 flex-wrap">
+              {props.tags.map((tag) => {
+                const tagContent = (
+                  <div className="text-s inline-block items-center font-bold uppercase px-3 py-1 rounded bg-gray-200 text-gray-700 gap-4">
+                    {tag.text}
+                  </div>
+                );
+
+                return tag.link ? (
+                  <a href={tag.link}>{tagContent}</a>
+                ) : (
+                  tagContent
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Background gradient (light version only) */}
+      <div
+        className={`absolute inset-0 -z-[2] ${variants.bg.gradient} pointer-events-none dark:hidden`}
+        aria-hidden="true"
+      ></div>
     </section>
   );
 }
 
+let svgIdCounter = 0;
 type SectionIllustrationProps = {
   orientation: SectionOrientation;
+  color: string;
 };
 function SectionIllustration(props: SectionIllustrationProps) {
   // SVG elements' IDs must not repeat
-  const sectionColorId = `sectionColor${props.orientation}`;
+  const sectionColorId = `sectionColor${props.orientation}_${svgIdCounter++}`;
 
   let sectionColor1, sectionColor2;
-  if (props.orientation === "left") {
-    // purple
-    sectionColor1 = "#667EEA";
-    // sectionColor2 = "#3ABAB4";
-    sectionColor2 = "#9F7AEA";
-  } else {
-    // green
-    sectionColor1 = "#3ABAB4";
-    sectionColor2 = "#3ABAB4";
-    // sectionColor2 = "#9F7AEA";
-  }
+  // if (props.orientation === "left") {
+  //   // purple
+  //   sectionColor1 = "#667EEA";
+  //   // sectionColor2 = "#3ABAB4";
+  //   sectionColor2 = "#9F7AEA";
+  // } else {
+  //   // green
+  //   sectionColor1 = "#3ABAB4";
+  //   sectionColor2 = "#3ABAB4";
+  //   // sectionColor2 = "#9F7AEA";
+  // }
+
+  sectionColor1 = props.color;
+  sectionColor2 = props.color;
 
   const variants = {
-    right: "-top-20 -left-20 md:-left-40",
-    left: "-top-20 -left-20 md:left-auto md:-right-40 md:-scale-x-100",
+    right: "-top-20 -left-6 md:-left-20",
+    left: "-top-20 -left-4 md:left-auto md:-right-20 md:-scale-x-100",
   };
 
   return (
     <svg
-      className={`absolute  ${variants[props.orientation]}`}
-      width="594"
-      height="548"
+      className={`absolute ${variants[props.orientation]}`}
+      width="130%"
+      height="130%"
       viewBox="0 0 594 548"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g filter={`url(#${sectionColorId}_filter_0)`}>
+      <g filter={`url(#${sectionColorId}_filter)`}>
         <rect
           x="26.4939"
           y="74.1213"
@@ -227,12 +323,12 @@ function SectionIllustration(props: SectionIllustrationProps) {
           height="450"
           rx="80"
           transform="rotate(-5.52628 26.4939 74.1213)"
-          fill={`url(#${sectionColorId}_paint_radial_0)`}
+          fill={`url(#${sectionColorId}_paint_radial)`}
         />
       </g>
       <defs>
         <filter
-          id={`${sectionColorId}_filter_0`}
+          id={`${sectionColorId}_filter`}
           x="0.706787"
           y="0.18306"
           width="592.586"
@@ -253,7 +349,7 @@ function SectionIllustration(props: SectionIllustrationProps) {
           />
         </filter>
         <radialGradient
-          id={`${sectionColorId}_paint_radial_0`}
+          id={`${sectionColorId}_paint_radial`}
           cx="0"
           cy="0"
           r="1"
@@ -261,7 +357,7 @@ function SectionIllustration(props: SectionIllustrationProps) {
           gradientTransform="translate(276.494 299.121) rotate(90) scale(325.5 361.667)"
         >
           <stop stop-color={`${sectionColor1}`} />
-          <stop offset="1" stop-color={`${sectionColor2}`} stop-opacity="0.2" />
+          <stop offset="1" stop-color={`${sectionColor2}`} stopOpacity="0" />
         </radialGradient>
       </defs>
     </svg>

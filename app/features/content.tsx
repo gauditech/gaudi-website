@@ -78,7 +78,7 @@ export default function FeaturesContent() {
             {/* Articles */}
             <div className="-mb-2">
               {categoryFeatures.map((feature) => (
-                <Feature {...feature} key={feature.key} />
+                <Feature {...feature} type={feature.key} />
               ))}
               {categoryFeatures.length === 0 && (
                 <div className="md:flex md:items-center md:justify-center">
@@ -185,7 +185,7 @@ function Feature(props: FeatureProps) {
           )}
           <footer className="text-sm flex items-center mt-3">
             {props.categories.map((cat) => (
-              <FeatureCategory key={cat} type={cat} />
+              <FeatureCategory type={cat} />
             ))}
           </footer>
         </div>
