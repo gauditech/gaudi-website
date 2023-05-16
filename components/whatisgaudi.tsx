@@ -24,13 +24,39 @@ export default function WhatIsGaudi() {
         type="language"
         orientation="left"
         supertitle="It's a language"
-        title='Describe "what", not "how"'
+        title="Describe your app"
         textContent={
-          <>
-            Gaudi is a declarative, domain specific, type safe programming
-            language that makes it easier to build and maintain web application
-            backends.
-          </>
+          <div className="flex flex-col gap-4">
+            <p>
+              Gaudi is a declarative, domain specific, type safe programming
+              language that makes it easier to build and maintain web
+              application backends. Write your backend using declarative
+              language and focus on <b>what</b> needs to be done, instead of{" "}
+              <b>how</b>. This allows Gaudi to understand the intention behind
+              your code and lets it write optimized code laser-focused on your
+              app's specific needs and automate a lot of the work around it.
+            </p>
+            <p>
+              <h6 className="h6 uppercase font-bold">Model</h6>
+              Describe your data models and relations between them using
+              intuitive, human-readable and database agnostic language. Enrich
+              your models through first-class support for computed fields,
+              subquery fields or even custom code hooks fields.
+            </p>
+            <p>
+              <h6 className="h6 uppercase font-bold">Query</h6>
+              Query your data using powerful and expressive query language with
+              type-safe support for model fields and relations, including
+              advanced types like computeds and subqueries.
+            </p>
+            <p>
+              <h6 className="h6 uppercase font-bold">API</h6>
+              Expose your data through default CRUD APIs without a single line
+              of query. Customize default or write completely custom API
+              endpoints using declarative and type-safe support for models,
+              fields and relations.
+            </p>
+          </div>
         }
         ctaText="Learn more"
         imageContent={[GaudiBookreviewsModels]}
@@ -48,6 +74,7 @@ export default function WhatIsGaudi() {
         title="Supercharge your development"
         textContent={
           <>
+            Gaudi comes with set of useful tools aimed at improving your development experience.
             Out of the box you can run and automate commands using CLI,
             automatically create, migrate and populate your database, develop
             faster using development mode and generate type-safe APIs and

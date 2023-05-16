@@ -15,7 +15,7 @@ export default function HeroHome() {
               className="h1 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-4 font-red-hat-display font-black"
               data-aos="fade-down"
             >
-              Build your app in a{" "}
+              Build <span className="text-teal-500">better</span> apps in a{" "}
               <span className="text-teal-500">fraction</span> of time!
             </h1>
             <p
@@ -23,9 +23,16 @@ export default function HeroHome() {
               data-aos="fade-down"
               data-aos-delay="150"
             >
-              Describe your application backend using simple, expressive
-              language. Focus on the bigger picture, and get your app with
-              batteries included.{" "}
+              Gaudi is a declarative programming language and a backend
+              framework that makes it easier to build and maintain web
+              application APIs. Simply describe your models and APIs in a declarative
+              way and instantly get your app with batteries included.
+              <br />
+              <br />
+              With Gaudi you get expressive data modeling, customizable APIs,
+              automatic database migration and population, powerful declarative
+              databse query engine, full stack type safety, client libary
+              generators and much more. All out of the box.
             </p>
 
             <div className="md:mt-8">
