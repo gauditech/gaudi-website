@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function HeroHome() {
   return (
-    <section className="relative">
-      <div className="max-w-6xl mx-auto px-5 md:px-6 pt-[100px] pb-10 md:pb-20 ">
+    <section className="relative px-5 md:px-6 pt-[100px] pb-10 md:pb-20">
+      <div className="max-w-6xl mx-auto">
         {/* Hero content */}
         <div className="md:grid md:grid-cols-12 md:gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -16,7 +16,7 @@ export default function HeroHome() {
               data-aos="fade-down"
             >
               Build <span className="text-teal-500">better</span> apps in a{" "}
-              <span className="text-teal-500">fraction</span> of time!
+              <span className="text-teal-500">fraction</span> of time
             </h1>
             <p
               className="text-xl text-gray-600 dark:text-gray-400"
@@ -25,14 +25,15 @@ export default function HeroHome() {
             >
               Gaudi is a declarative programming language and a backend
               framework that makes it easier to build and maintain web
-              application APIs. Simply describe your models and APIs in a declarative
-              way and instantly get your app with batteries included.
+              application APIs. Simply describe your models and APIs in a
+              declarative way and instantly get your app with batteries
+              included.
               <br />
               <br />
-              With Gaudi you get expressive data modeling, customizable APIs,
-              automatic database migration and population, powerful declarative
-              databse query engine, full stack type safety, client libary
-              generators and much more. All out of the box.
+              With Gaudi out of the box you get expressive data modeling,
+              customizable APIs, automatic database migration and population,
+              powerful declarative database query engine, full stack type
+              safety, client libary generators and much more.
             </p>
 
             <div className="md:mt-8">

@@ -27,35 +27,34 @@ export default function WhatIsGaudi() {
         title="Describe your app"
         textContent={
           <div className="flex flex-col gap-4">
-            <p>
+            <div>
               Gaudi is a declarative, domain specific, type safe programming
               language that makes it easier to build and maintain web
               application backends. Write your backend using declarative
               language and focus on <b>what</b> needs to be done, instead of{" "}
               <b>how</b>. This allows Gaudi to understand the intention behind
-              your code and lets it write optimized code laser-focused on your
-              app's specific needs and automate a lot of the work around it.
-            </p>
-            <p>
+              your code and lets it write optimized code and automate a lot of
+              the work around it.
+            </div>
+            <div>
               <h6 className="h6 uppercase font-bold">Model</h6>
               Describe your data models and relations between them using
               intuitive, human-readable and database agnostic language. Enrich
               your models through first-class support for computed fields,
               subquery fields or even custom code hooks fields.
-            </p>
-            <p>
+            </div>
+            <div>
               <h6 className="h6 uppercase font-bold">Query</h6>
               Query your data using powerful and expressive query language with
-              type-safe support for model fields and relations, including
+              type-safe support for models, fields and relations, including
               advanced types like computeds and subqueries.
-            </p>
-            <p>
+            </div>
+            <div>
               <h6 className="h6 uppercase font-bold">API</h6>
               Expose your data through default CRUD APIs without a single line
               of query. Customize default or write completely custom API
-              endpoints using declarative and type-safe support for models,
-              fields and relations.
-            </p>
+              endpoints using declarative and type-safe support for your models.
+            </div>
           </div>
         }
         ctaText="Learn more"
@@ -74,12 +73,12 @@ export default function WhatIsGaudi() {
         title="Supercharge your development"
         textContent={
           <>
-            Gaudi comes with set of useful tools aimed at improving your development experience.
-            Out of the box you can run and automate commands using CLI,
-            automatically create, migrate and populate your database, develop
-            faster using development mode and generate type-safe APIs and
-            clients that allow seamless integration with other parts of your
-            application stack.
+            Gaudi comes with set of useful tools aimed at improving your
+            development experience. Out of the box you can run and automate
+            commands using CLI, automatically create, migrate and populate your
+            database, develop faster using development mode and generate
+            type-safe APIs and client libraries that allow seamless integration
+            with other parts of your application stack.
           </>
         }
         ctaText="Explore more"
@@ -98,15 +97,11 @@ export default function WhatIsGaudi() {
         title="Perfomance tailored for your app"
         textContent={
           <>
-            Gaudi runs your app in a highly optimized web server environment
-            with focus on performance and security.
-            <br />
-            <br />
-            Query engine generates the best possible SQL queries tailored
-            specifically for your app. Package and deploy your entire app
-            runtime in a Docker image with a single command. Gain insight into
-            how your application is used, how it performs, find bottlenecks with
-            ease …
+            Gaudi generates the best possible code and SQL queries laser-focused
+            on your app's specific needs and runs it in a highly optimized web
+            server environment with focus on performance and security. Your app
+            automatically comes with things like logging, error handling,
+            authorization and much more.
           </>
         }
         ctaText="Read more"
@@ -216,7 +211,7 @@ function Section(props: SectionProps) {
         {props.title}
       </h3>
 
-      <p data-aos="fade-left">{props.textContent}</p>
+      <div data-aos="fade-left">{props.textContent}</div>
 
       {props.ctaText && (
         <div className="text-center">
@@ -361,9 +356,9 @@ function SectionIllustration(props: SectionIllustrationProps) {
           width="592.586"
           height="547.634"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -383,8 +378,8 @@ function SectionIllustration(props: SectionIllustrationProps) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(276.494 299.121) rotate(90) scale(325.5 361.667)"
         >
-          <stop stop-color={`${sectionColor1}`} />
-          <stop offset="1" stop-color={`${sectionColor2}`} stopOpacity="0" />
+          <stop stopColor={`${sectionColor1}`} />
+          <stop offset="1" stopColor={`${sectionColor2}`} stopOpacity="0" />
         </radialGradient>
       </defs>
     </svg>
