@@ -1,0 +1,32 @@
+/* Custom Swiper styles */
+.carousel.swiper-container {
+  @apply overflow-visible;
+}
+
+.carousel .swiper-slide img {
+  opacity: 0.32;
+}
+
+.carousel .swiper-slide > div > div {
+  @apply opacity-0;
+}
+
+.carousel .swiper-slide.swiper-slide-active,
+.carousel .swiper-slide.swiper-slide-duplicate-active {
+  @apply shadow-2xl;
+}
+
+.carousel .swiper-slide.swiper-slide-active img,
+.carousel .swiper-slide.swiper-slide-duplicate-active img {
+  @apply opacity-100;
+}
+
+.carousel .swiper-slide.swiper-slide-active > div > div,
+.carousel .swiper-slide.swiper-slide-duplicate-active > div > div {
+  @apply opacity-100;
+}
+
+/* Helper class to fix swipering carousel on Safari */
+.translate-z-0 {
+  transform: translateZ(0);
+}

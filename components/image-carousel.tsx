@@ -18,7 +18,7 @@ export default function Carousel(props: Props) {
   return (
     <section className={`shadow-xl rounded-xl ${props.className ?? ""}`}>
       {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
-      {/* * Custom styles in src/css/additional-styles/theme.scss */}
+      {/* * Custom styles in src/css/gaudi/theme.scss */}
       <Swiper
         modules={[Pagination, Autoplay, EffectCoverflow]}
         pagination={{ clickable: true }}

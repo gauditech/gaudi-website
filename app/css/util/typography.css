@@ -1,0 +1,27 @@
+/* ----- Typography styles ----- */
+
+.h1 {
+  @apply text-4xl font-black tracking-tighter;
+}
+
+.h2 {
+  @apply text-3xl font-black tracking-tighter;
+}
+
+.h3 {
+  @apply text-3xl font-black;
+}
+
+.h4 {
+  @apply text-2xl font-black tracking-tight;
+}
+
+@screen md {
+  .h1 {
+    @apply text-5xl;
+  }
+
+  .h2 {
+    @apply text-4xl;
+  }
+}

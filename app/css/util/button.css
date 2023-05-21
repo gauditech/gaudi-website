@@ -1,0 +1,31 @@
+/* Buttons */
+.btn,
+.btn-sm,
+.btn-lg {
+  @apply font-medium inline-flex items-center justify-center  leading-snug font-semibold;
+  @apply border border-transparent rounded;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent;
+}
+
+.btn {
+  @apply px-8 py-4;
+}
+
+.btn-sm {
+  @apply px-4 py-2;
+}
+
+.btn-lg {
+  @apply px-12 py-6;
+  @apply xl:text-xl;
+}
+
+.btn-blue {
+  @apply bg-blue-500 hover:bg-blue-600;
+  @apply text-white;
+}
+
+/* Links */
+.link {
+  @apply text-blue-500 hover:text-blue-600 no-underline hover:underline;
+}

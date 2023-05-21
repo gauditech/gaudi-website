@@ -1,10 +1,7 @@
 export default function MailinglistCta() {
   return (
     <section>
-      <div
-        className="dark bg-gray-800 py-8 px-8 md:py-12 md:px-12 text-center text-gray-100"
-        data-aos="fade-down"
-      >
+      <div className="py-8 px-8 md:py-12 md:px-12 text-center text-gray-100">
         <div className="text-xl font-medium mb-6">
           Stay in touch! Don't miss Gaudi news and updates
         </div>
@@ -16,10 +13,7 @@ export default function MailinglistCta() {
               placeholder="Your email"
               aria-label="Your email"
             />
-            <a
-              className="btn-sm text-white bg-teal-500 hover:bg-teal-400 shrink-0"
-              href="#0"
-            >
+            <a className="btn-sm btn-blue" href="#0">
               Subscribe
             </a>
             <svg

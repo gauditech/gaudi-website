@@ -1,0 +1,70 @@
+
+
+model Author {
+    field name { type string }
+
+    relation books { from Book, through author }
+    
+    query top_5_popular_books {
+        from books,
+        filter { review_score > 0 },
+        order by { positive_reviews_count desc },
+        limit 5
+    }
+}
+
+entrypoint Author {
+    response {
+        id,
+        name,
+        top_5_popular_books {
+            id,
+            title,
+            review_score
+        }
+    }
+
+    create endpoint {}
+    list endpoint {}
+    get endpoint {}
+    update endpoint {}
+    delete endpoint {}
+}
+
+
+model Book {
+    reference author { to Author }
+    field title { type string, validate { min 4, max 40 } }
+
+    relation reviews { from BookReview, through book }
+
+    computed review_score { positive_reviews_count - negative_reviews_count }    
+    // computed positive_reviews_count { count(positive_reviews) }
+    // computed negative_reviews_count { count(negative_reviews) }
+
+    query positive_reviews_count { from reviews, filter { is_positive is true }, count }
+    query negative_reviews_count { from reviews, filter { is_positive is false }, count }
+}
+
+model BookReview {
+    reference reviewer { to Author }
+    reference book { to Book }
+
+    field is_positive { type boolean, default true }
+}
+
+runtime JsRuntime {
+    default
+    source path "./dist/hooks"
+}
+
+generate client {
+    target js
+    api entrypoint
+    output "client/connector"
+  }
+  
+
+auth {
+    method basic {}
+}
