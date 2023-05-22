@@ -6,7 +6,7 @@ export default function Hero() {
       <section className="px-6 sm:px-8 lg:flex lg:w-full lg:items-center lg:justify-between lg:gap-12">
         <div className="lg:mb-10 lg:w-1/2">
           <div className="lg:mx-auto lg:max-w-2xl">
-            <h2 className="font-display text-3xl font-extrabold text-white sm:text-5xl lg:text-[length:64px] lg:leading-[56px] xl:text-7xl">
+            <h2 className="font-extrabold text-white text-3xl sm:text-5xl lg:text-6xl xl:text-7xl">
               Build <span className="text-yellow-500">better</span> apps in a{" "}
               <span className="text-blue-500">fraction</span> of time
             </h2>

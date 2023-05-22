@@ -6,7 +6,7 @@ export default function HowItWorks() {
     <section className="px-6 sm:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-row lg:gap-10 lg:w-full lg:items-start lg:justify-between">
       <div>
         <div className="lg:max-w-2xl lg:mx-auto">
-          <h2 className="font-display text-4xl font-extrabold text-white md:text-7xl">
+          <h2 className="font-extrabold text-white text-3xl sm:text-5xl lg:text-7xl xl:text-7xl">
             How it <span className="text-green-brand">Works</span>?
           </h2>
         </div>
