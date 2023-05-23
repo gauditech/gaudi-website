@@ -10,7 +10,7 @@ export default function Home() {
 
       <WhatIsGaudi />
 
-      <HowItWorks />
+      {/* <HowItWorks /> */}
 
       <MailinglistCta />
     </>

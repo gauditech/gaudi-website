@@ -32,7 +32,9 @@ export default function MailinglistCta() {
           </div>
           {/* Success message */}
           {/* <p className="text-sm mt-2 opacity-80">Thanks for subscribing!</p> */}
-          <p className="text-sm text-gray-400 italic mt-3">No spam. No ads.</p>
+          <p className="text-sm text-gray-400 italic mt-3">
+            No spam. No ads. Just Gaudi.
+          </p>
         </form>
       </div>
     </section>
