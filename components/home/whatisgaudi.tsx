@@ -14,8 +14,9 @@ export default function WhatIsGaudi() {
     <>
       <ContentSection
         orientation="left"
+        headingLevel={2}
         title=<>
-          What is <H color="blue">Gaudi</H>
+          What is <H color="blue">Gaudi</H>?
         </>
         textContent={
           <>
@@ -154,6 +155,7 @@ export default function WhatIsGaudi() {
 
       <ContentSection
         orientation="left"
+        headingLevel={2}
         title=<>
           Tools that supercharge your{" "}
           <span className="text-yellow-brand">development</span>
@@ -335,6 +337,7 @@ type ContentSectionProps = {
   snippetContent?: ReactNode;
   tags?: SectionTag[];
   singleCol?: boolean;
+  headingLevel?: 2 | 3;
 };
 function ContentSection(props: ContentSectionProps) {
   // style variants
@@ -357,7 +360,7 @@ function ContentSection(props: ContentSectionProps) {
 
   const titlePart = props.title && (
     <>
-      <Heading level={3}>{props.title}</Heading>
+      <Heading level={props.headingLevel ?? 3}>{props.title}</Heading>
     </>
   );
 
@@ -399,7 +402,9 @@ function ContentSection(props: ContentSectionProps) {
         {titlePart && (
           <>
             <div className={`${variants.grid[props.orientation].title}`}>
-              <div className="lg:max-w-2xl lg:mx-auto">{titlePart}</div>
+              <div className="lg:max-w-xl xl:max-w-2xl lg:mx-auto">
+                {titlePart}
+              </div>
             </div>
             <div className={`${variants.grid[props.orientation].empty}`}>
               &nbsp;
@@ -410,14 +415,14 @@ function ContentSection(props: ContentSectionProps) {
         {(descriptionPart || imagePart) && (
           <>
             <div className={`${variants.grid[props.orientation].textContent}`}>
-              <div className="lg:max-w-2xl lg:mx-auto">
+              <div className="lg:max-w-xl xl:max-w-2xl lg:mx-auto">
                 <p className="hyphen-manual text-lg md:text-xl">
                   {descriptionPart}
                 </p>
               </div>
             </div>
             <div className={`${variants.grid[props.orientation].image}`}>
-              <div className="px-8 lg:p-0 mt-8 mx-auto  lg:max-w-2xl ">
+              <div className="md:px-8 lg:p-0 mt-8 mx-auto lg:max-w-lg xl:max-w-2xl">
                 {imagePart}
               </div>
             </div>
