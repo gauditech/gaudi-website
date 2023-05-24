@@ -2,11 +2,10 @@ import Link from "next/link";
 import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 
-import { CodeSnippet, CodeSnippetProps } from "@/components/CodeSnippet";
+import { CodeSnippet } from "@/components/CodeSnippet";
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 
 type SectionOrientation = "right" | "left";
-type SectionType = "language" | "devtoolkit" | "runtime" | "infrastructure";
 type SectionTag = { text: string; link?: string };
 
 export default function WhatIsGaudi() {
@@ -14,18 +13,21 @@ export default function WhatIsGaudi() {
     <>
       <ContentSection
         orientation="left"
-        title=<>What is Gaudi</>
+        title=<>
+          What is <H color="blue">Gaudi</H>
+        </>
         textContent={
           <>
             <p>
-              Gaudi is a declarative, domain specific, type safe programming
-              language that makes it easier to build and maintain web
-              application backends. Write your backend using declarative
-              language and focus on <b className="text-white font-bold">what</b>{" "}
-              needs to be done, instead of{" "}
-              <b className="text-white font-bold">how</b>. This allows Gaudi to
-              understand the intention behind your code and lets it write
-              optimized code and automate a lot of the work around it.
+              Gaudi is a <H color="white">declarative</H>,{" "}
+              <H color="white">domain specific</H> and{" "}
+              <H color="white">type-safe</H> programming language that makes it
+              easier to build and maintain web application backends. Write your
+              backend using declarative language and focus on{" "}
+              <H color="white">what</H> needs to be done, instead of{" "}
+              <H color="white">how</H>. This allows Gaudi to understand the
+              intention behind your code and lets it write optimized code and
+              automate a lot of the work around it.
             </p>
             <p className="mt-4">Lets' see how it all works ...</p>
           </>
@@ -41,15 +43,17 @@ export default function WhatIsGaudi() {
           <>
             <p>
               Create a simple text file in your favourite IDE (eg.{" "}
-              <i>bookreviews.gaudi</i>) and describe your data models and
-              relations between them using intuitive, human-readable and
-              database agnostic language. Enrich your models through first-class
-              support for computed fields, subquery fields or even custom code
-              hooks fields.
+              <code className="text-white italic">bookreviews.gaudi</code>) and
+              describe your data models and relations between them using{" "}
+              <H color="white">intuitive</H>,<H color="white">human-readable</H>{" "}
+              and <H color="white">database agnostic</H> language. Enrich your
+              models through first-class support for{" "}
+              <H color="white">computed</H> fields,
+              <H color="white">query</H> fields or even custom code{" "}
+              <H color="white">hooks</H> fields.
             </p>
           </>
         }
-        ctaText="Learn more"
         snippetContent={
           <AppWindowFrame title="~/bookreviews.gaudi">
             <CodeSnippet
@@ -67,15 +71,15 @@ export default function WhatIsGaudi() {
         textContent={
           <>
             <p>
-              Query your data using powerful and expressive query language with
-              type-safe support for models, fields and relations. You can use
-              queries and expression to create powerful query and computed
-              fileds directly in your models and even use them in other
-              subqueries and filters.
+              Query your data using powerful and expressive{" "}
+              <H color="white">query language</H> with type-safe support for
+              models, fields and relations. You can use queries and expressions
+              to create powerful <H color="white">query fields</H> and{" "}
+              <H color="white">computed fields</H> directly in your models and
+              even use them in other subqueries and filters.
             </p>
           </>
         }
-        ctaText="Learn more"
         snippetContent={
           <AppWindowFrame title="~/bookreviews.gaudi">
             <CodeSnippet
@@ -93,14 +97,14 @@ export default function WhatIsGaudi() {
         textContent={
           <>
             <p>
-              Expose your data through default CRUD APIs without a single line
-              of SQL. Or go beyond CRUD and customize default or write
-              completely custom API endpoints using full declarativeness and
-              type-safety of Gaudi.
+              Expose your data through default{" "}
+              <H color="white">CRUD endpoints</H> with a single line of Gaudi
+              code. Or go beyond CRUD and customize default or write completely{" "}
+              <H color="white">custom endpoints</H> using full declarativeness
+              and type-safety of Gaudi.
             </p>
           </>
         }
-        ctaText="Learn more"
         snippetContent={
           <AppWindowFrame title="~/bookreviews.gaudi">
             <CodeSnippet
@@ -116,17 +120,21 @@ export default function WhatIsGaudi() {
         textContent={
           <>
             <p>
-              Run your code through Gaudi compiler and it will instanly build
-              your app and you can run it, publish it or deploy it directly to
-              your server. And that's it! :)
+              Gaudi analyzes your code and automatically generates the{" "}
+              <H color="white">optimized</H> code and SQL queries{" "}
+              <H color="white">laser-focused</H> on your app's specific needs
+              and runs it in a highly optimized web server environment with
+              focus on <H color="white">performance</H> and{" "}
+              <H color="white">security</H>. Your app automatically comes with
+              things like <H color="white">logging</H>,{" "}
+              <H color="white">error handling</H>,{" "}
+              <H color="white">authorization</H> and much more.
             </p>
+
             <p className="mt-4">
-              Gaudi analyzes your code and automatically generates the best
-              possible code and SQL queries laser-focused on your app's specific
-              needs and runs it in a highly optimized web server environment
-              with focus on performance and security. Your app automatically
-              comes with things like logging, error handling, authorization and
-              much more.
+              Run your code through <H color="white">Gaudi compiler</H> and it
+              will instanly build your app and you can run it, publish it or
+              deploy it directly to your server. And that's it! :)
             </p>
           </>
         }
@@ -140,44 +148,8 @@ export default function WhatIsGaudi() {
         }
       />
 
-      {/*
-      <ContentSection
-        orientation="right"
-        title=<>
-          Tools that supercharge your{" "}
-          <span className="text-yellow-brand">development</span>
-        </>
-        textContent={
-          <>
-            <p>
-              Gaudi comes with set of modern development tools and practices
-              aimed at improving your productivity and development experience.
-            </p>
-            <p className="mt-4">
-              Out of the box you can run and automate commands using{" "}
-              <b className="text-white font-bold">CLI</b>, automatically{" "}
-              <b className="text-white font-bold">create</b>,{" "}
-              <b className="text-white font-bold">migrate</b> and{" "}
-              <b className="text-white font-bold">populate</b>
-              your database, develop faster using{" "}
-              <b className="text-white font-bold">development mode</b> and
-              generate <b className="text-white font-bold">type-safe</b> APIs
-              and <b className="text-white font-bold">client libraries</b> that
-              allow seamless integration with other parts of your application
-              stack.
-            </p>
-          </>
-        }
-        ctaText="Explore more"
-        snippetContent={
-          <AppWindowFrame title="~/bookreviews.gaudi">
-            <CodeSnippet
-              code={`<div><div><span style="color: #c586c0;">model</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">Book</span><span style="color: #cccccc;"> {</span></div><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">reference</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">author</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">to</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">Author</span><span style="color: #cccccc;"> }</span></div><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">field</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">title</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">type</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">string</span><span style="color: #cccccc;">, </span><span style="color: #c586c0;">validate</span><span style="color: #cccccc;"> { </span><span style="color: #9cdcfe;">min</span><span style="color: #cccccc;"> </span><span style="color: #b5cea8;">4</span><span style="color: #cccccc;">, </span><span style="color: #9cdcfe;">max</span><span style="color: #cccccc;"> </span><span style="color: #b5cea8;">40</span><span style="color: #cccccc;"> } }</span></div><br><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">relation</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">reviews</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">from</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">BookReview</span><span style="color: #cccccc;">, </span><span style="color: #c586c0;">through</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">book</span><span style="color: #cccccc;"> }</span></div><br><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">computed</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">review_score</span><span style="color: #cccccc;"> { </span><span style="color: #9cdcfe;">positive_reviews_count</span><span style="color: #cccccc;"> </span><span style="color: #d4d4d4;">-</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">negative_reviews_count</span><span style="color: #cccccc;"> }    </span></div><br><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">query</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">positive_reviews_count</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">from</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">reviews</span><span style="color: #cccccc;">, </span><span style="color: #c586c0;">filter</span><span style="color: #cccccc;"> { </span><span style="color: #9cdcfe;">is_positive</span><span style="color: #cccccc;"> </span><span style="color: #c586c0;">is</span><span style="color: #cccccc;"> </span><span style="color: #4fc1ff;">true</span><span style="color: #cccccc;"> }, </span><span style="color: #c586c0;">count</span><span style="color: #cccccc;"> }</span></div><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">query</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">negative_reviews_count</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">from</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">reviews</span><span style="color: #cccccc;">, </span><span style="color: #c586c0;">filter</span><span style="color: #cccccc;"> { </span><span style="color: #9cdcfe;">is_positive</span><span style="color: #cccccc;"> </span><span style="color: #c586c0;">is</span><span style="color: #cccccc;"> </span><span style="color: #4fc1ff;">false</span><span style="color: #cccccc;"> }, </span><span style="color: #c586c0;">count</span><span style="color: #cccccc;"> }</span></div><div><span style="color: #cccccc;">}</span></div></div>`}
-            />
-          </AppWindowFrame>
-        }
-      />
-*/}
+      <div className="h-32"></div>
+
       <ContentSection
         orientation="left"
         title=<>
@@ -187,10 +159,12 @@ export default function WhatIsGaudi() {
         textContent={
           <>
             <p>
-              Gaudi comes with set of modern development tools that promote best
-              practices aimed at improving your productivity and development
-              experience.
+              Gaudi comes with a set of modern development tools that promote
+              best practices aimed at improving your{" "}
+              <H color="white">productivity</H> and{" "}
+              <H color="white">development experience</H>.
             </p>
+
             <p className="mt-4">Let's got through some of them ...</p>
           </>
         }
@@ -199,29 +173,26 @@ export default function WhatIsGaudi() {
       <ContentSection
         orientation="right"
         title=<>
-          Faster project setup and{" "}
+          Faster project <span className="text-yellow-brand">setup</span> and{" "}
           <span className="text-green-brand">development</span>
         </>
         textContent={
           <>
             <p>
               Most of Gaud's tools are easily available through Gaudi{" "}
-              <b className="text-white font-bold">CLI</b>. Whether you want to{" "}
-              <b className="text-white font-bold">setup</b> your next project,{" "}
-              <b className="text-white font-bold">re/build</b> your existing
-              Gaudi project, start developing in{" "}
-              <b className="text-white font-bold">development mode</b> or simply
-              run your project in{" "}
-              <b className="text-white font-bold">production</b> ... all
-              available with one line of{" "}
-              <b className="text-white font-bold">Gaudi CLI</b>.
+              <H color="white">CLI</H>. Whether you want to{" "}
+              <H color="white">setup</H> your next project,{" "}
+              <H color="white">re/build</H> your existing Gaudi project, start
+              developing in <H color="white">development mode</H> or simply run
+              your project in <H color="white">production</H> ... all available
+              with one line of <H color="white">Gaudi CLI</H>.
             </p>
           </>
         }
         snippetContent={
           <AppWindowFrame title="~/bookreviews.gaudi">
             <CodeSnippet
-              code={`user@gaudi:~/projects/gaudi-project [main]$ npx gaudi-cli
+              code={`user@gaudi:~/gaudi-project $ npx gaudi-cli
 gaudi-cli &lt;command&gt; [arguments]
 
 Commands:
@@ -250,18 +221,23 @@ Commands:
               Gaudi offers first-class database migration support both in
               development and in production.
             </p>
+
             <p className="mt-4">
-              Quickly iterate your ideas, add new or change existing models, run
-              tests or even switch between Git branches with completely
-              different database models ... Gaudi will make sure your database
-              is always in sync with current model and populated with
-              appropriate data.
+              Quickly <H color="white">iterate</H> your ideas, add{" "}
+              <H color="white">new or change</H> existing models, run{" "}
+              <H color="white">tests</H> or even switch between{" "}
+              <H color="white">Git branches</H> with completely different
+              database models ... Gaudi will make sure your database is always
+              in <H color="white">sync</H> with current model and{" "}
+              <H color="white">populated</H> with appropriate data.
               <br />
-              No database hassle, just code.
+              No database hassle, just code!
             </p>
+
             <p className="mt-4">
-              Once satisfied with your changes, create migration scripts and
-              apply them using Gaudi at your own time and convenience.
+              Once satisfied with your changes, create{" "}
+              <H color="white">migration scripts</H> and apply them to your
+              production at your own time and convenience.
             </p>
           </>
         }
@@ -278,20 +254,20 @@ Commands:
       <ContentSection
         orientation="right"
         title=<>
-          Type-safe <b className="text-blue-brand">APIs</b> and{" "}
-          <b className="text-green-brand">client libraries</b>
+          Type-safe <H color="blue">APIs</H> and{" "}
+          <H color="green">client libraries</H>
         </>
         textContent={
-          <p>
-            Want to use your new API in your frontend, call it from another
-            backend API, allow third party integrations, ... Seamless
-            integrations with other parts of your or third party application
-            stack. Gaudi automatically generates{" "}
-            <b className="text-white font-bold">type-safe</b> OpenAPI
-            specifications and{" "}
-            <b className="text-white font-bold">client libraries</b> that are
-            self-documented and easily integrated in other development tools.
-          </p>
+          <>
+            <p>
+              Want to use your new API in your frontend, call it from another
+              backend API, allow third party integrations ... Gaudi
+              automatically generates type-safe <H color="white">OpenAPI</H>{" "}
+              specifications and <H color="white">client libraries</H> that are
+              self-documented, type-safe and easily integrated in other
+              development tools.
+            </p>
+          </>
         }
         snippetContent={
           <AppWindowFrame title="~/bookreviews.gaudi">
@@ -302,6 +278,32 @@ Commands:
           </AppWindowFrame>
         }
       />
+
+      <div className="lg:h-32"></div>
+
+      <ContentSection
+        orientation="left"
+        singleCol
+        title=<>
+          Start your <H color="green">new</H> <H color="blue">Gaudi</H>{" "}
+          <H color="yellow">project</H>
+        </>
+        textContent={
+          <>
+            <section>
+              <div className="xl: flex flex-col gap-4 xl:flex-row">
+                <a className="btn btn-lg btn-blue w-full xl:w-60" href="/docs">
+                  Quick start
+                </a>
+                <a className="btn btn-lg w-full xl:w-60" href="/docs">
+                  Read the docs
+                </a>
+              </div>
+            </section>
+          </>
+        }
+      />
+      <div className="lg:h-32"></div>
     </>
   );
 }
@@ -317,6 +319,7 @@ type ContentSectionProps = {
   imageContent?: StaticImageData;
   snippetContent?: ReactNode;
   tags?: SectionTag[];
+  singleCol?: boolean;
 };
 function ContentSection(props: ContentSectionProps) {
   // style variants
@@ -373,13 +376,19 @@ function ContentSection(props: ContentSectionProps) {
 
   return (
     <>
-      <section className="px-6 sm:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-row lg:gap-10 lg:w-full lg:items-start lg:justify-between">
+      <section
+        className={`px-6 sm:px-8 lg:grid ${
+          props.singleCol ?? false ? "lg:grid-cols-1" : "lg:grid-cols-2"
+        } lg:grid-flow-row lg:gap-10 lg:w-full lg:items-start lg:justify-between`}
+      >
         {titlePart && (
           <>
             <div className={`${variants.grid[props.orientation].title}`}>
               <div className="lg:max-w-2xl lg:mx-auto">{titlePart}</div>
             </div>
-            <div className={`${variants.grid[props.orientation].empty}`}></div>
+            <div className={`${variants.grid[props.orientation].empty}`}>
+              &nbsp;
+            </div>
           </>
         )}
 
@@ -405,18 +414,6 @@ function ContentSection(props: ContentSectionProps) {
 }
 
 /**
- * Render heading section
- */
-type HeadingSectionProps = PropsWithChildren<{}>;
-const HeadingSection: FunctionComponent<HeadingSectionProps> = (props) => {
-  <section className="px-6 sm:px-8">
-    <div className="lg:max-w-2xl lg:mx-auto mb-32">
-      <Heading level={2}>{props.children}</Heading>
-    </div>
-  </section>;
-};
-
-/**
  * Render heading
  */
 type HeadingProps = PropsWithChildren<{
@@ -438,3 +435,23 @@ export const Heading: FunctionComponent<HeadingProps> = (props) => {
 
   return <h2 className={className}>{children}</h2>;
 };
+
+/** Make children highlighted */
+type HighlightedProps = PropsWithChildren<{
+  color: "white" | "green" | "blue" | "yellow";
+}>;
+const Highlighted: FunctionComponent<HighlightedProps> = (props) => {
+  const variants: Record<HighlightedProps["color"], string> = {
+    white: "text-white",
+    green: "text-green-brand",
+    blue: "text-blue-brand",
+    yellow: "text-yellow-brand",
+  };
+  return (
+    <span className={`font-extrabold ${variants[props.color]}`}>
+      {props.children}
+    </span>
+  );
+};
+// shorter name for component for easier use
+const H = Highlighted;

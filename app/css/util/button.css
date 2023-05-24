@@ -3,8 +3,9 @@
 .btn-sm,
 .btn-lg {
   @apply font-medium inline-flex items-center justify-center  leading-snug font-semibold;
-  @apply border border-transparent rounded;
+  @apply border border-white border-2 rounded hover:border-blue-brand;
   @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent;
+  @apply text-gray-200;
 }
 
 .btn {
@@ -21,7 +22,8 @@
 }
 
 .btn-blue {
-  @apply bg-blue-500 hover:bg-blue-600;
+  @apply bg-blue-brand hover:bg-blue-600;
+  @apply border-blue-brand;
   @apply text-white;
 }
 

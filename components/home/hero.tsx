@@ -12,25 +12,22 @@ export default function Hero() {
             </h2>
             <div className="h-6"></div>
             <p className="text-lg lg:text-xl">
-              Gaudi is a declarative programming language and a backend
-              framework that makes it easier to build and maintain web
-              application APIs. Simply describe your models and APIs in a
-              declarative way and instantly get your app with batteries
-              included.
+              Gaudi is a declarative programming language and a backend framework that makes it
+              easier to build and maintain web application APIs. Simply describe your models and
+              APIs in a declarative way and instantly get your app with batteries included.
               <br />
               <br />
-              With Gaudi out of the box you get expressive data modeling,
-              customizable APIs, automatic database migration and population,
-              powerful declarative database query engine, full stack type
-              safety, client libary generators and much more.
+              With Gaudi out of the box you get expressive data modeling, customizable APIs,
+              automatic database migration and population, powerful declarative database query
+              engine, full stack type-safety, client libary generators and much more.
             </p>
             <div className="h-9 xl:h-10"></div>
             <div className="xl: flex flex-col gap-4 xl:flex-row">
-              <a
-                className="btn btn-lg btn-blue text-white border-2 w-full xl:w-60"
-                href="/docs"
-              >
-                Get started
+              <a className="btn btn-lg btn-blue text-white border-2 w-full xl:w-60" href="/docs">
+                Quick start
+              </a>
+              <a className="btn btn-lg w-full xl:w-60" href="/docs">
+                Read the docs
               </a>
             </div>
           </div>
