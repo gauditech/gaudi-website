@@ -46,8 +46,9 @@ export default function WhatIsGaudi() {
               Create a simple text file in your favourite IDE (eg.{" "}
               <code className="text-white italic">bookreviews.gaudi</code>) and
               describe your data models and relations between them using{" "}
-              <H color="white">intuitive</H>,<H color="white">human-readable</H>{" "}
-              and <H color="white">database agnostic</H> language. Enrich your
+              <H color="white">intuitive</H>,{" "}
+              <H color="white">human-readable</H> and{" "}
+              <H color="white">database agnostic</H> language. Enrich your
               models through first-class support for{" "}
               <H color="white">computed</H> fields,
               <H color="white">query</H> fields or even custom code{" "}
@@ -416,7 +417,9 @@ function ContentSection(props: ContentSectionProps) {
               </div>
             </div>
             <div className={`${variants.grid[props.orientation].image}`}>
-              <div className="lg:max-w-2xl lg:mx-auto">{imagePart}</div>
+              <div className="px-8 lg:p-0 mt-8 mx-auto  lg:max-w-2xl ">
+                {imagePart}
+              </div>
             </div>
           </>
         )}
