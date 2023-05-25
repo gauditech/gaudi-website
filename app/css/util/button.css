@@ -3,7 +3,7 @@
 .btn-sm,
 .btn-lg {
   @apply font-medium inline-flex items-center justify-center  leading-snug font-semibold;
-  @apply border border-white border-2 rounded hover:border-blue-brand;
+  @apply border border-white border-2 rounded-lg hover:border-blue-brand;
   @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent;
   @apply text-gray-200;
 }
