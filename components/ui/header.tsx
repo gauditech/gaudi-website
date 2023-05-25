@@ -25,6 +25,12 @@ export default function Header() {
       <nav className="flex" aria-label="Main">
         <a
           className="mx-2 text-base font-semibold opacity-80 last:mr-0 hover:opacity-100 sm:mx-4 "
+          href="/features"
+        >
+          Features
+        </a>
+        <a
+          className="mx-2 text-base font-semibold opacity-80 last:mr-0 hover:opacity-100 sm:mx-4 "
           href="/blog"
         >
           Blog

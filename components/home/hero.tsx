@@ -1,6 +1,6 @@
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import { CodeSnippet } from "@/components/CodeSnippet";
-import { FunctionComponent } from "react";
+import { HeroBackground, HeroBackgroundImage } from "@/components/home/HeroBackground";
 
 export default function Hero() {
   return (
@@ -41,7 +41,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="relative -mx-6 mt-6 overflow-hidden p-4 sm:-mx-8 sm:p-8 md:p-10 lg:mt-0 lg:w-1/2 lg:rounded-l-lg lg:p-16">
-          <BgImage className="block lg:hidden -z-1" />
+          <HeroBackgroundImage className="block lg:hidden -z-1" />
 
           {/* Gaudi hero code snippet */}
           <AppWindowFrame title="bookreviews.gaudi">
@@ -51,36 +51,10 @@ export default function Hero() {
           </AppWindowFrame>
         </div>
 
-        <div className="absolute hidden lg:block top-0 left-0 w-full h-full -z-1">
-          <BgImage />
-
-          <div className="absolute hidden lg:block inset-0 h-full w-full box-content">
-            <div
-              className="absolute inset-0 -start-[25%]  bg-gradient-to-r from-gray-900"
-              aria-hidden="true"
-            ></div>
-
-            <div
-              className="absolute inset-0 -start-[25%] bg-gradient-to-t from-gray-900"
-              aria-hidden="true"
-            ></div>
-          </div>
-        </div>
+        <HeroBackground />
       </section>
 
       <div className="h-32 lg:h-64"></div>
     </>
   );
 }
-
-type BgImageProps = {
-  className?: string;
-};
-const BgImage: FunctionComponent<BgImageProps> = (props) => {
-  return (
-    <div
-      className={`absolute top-0 left-0 w-full h-full ${props.className ?? ""}`}
-      style={{ backgroundImage: `url(/images/gaudi_pattern4.svg)` }}
-    ></div>
-  );
-};
