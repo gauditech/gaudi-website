@@ -44,7 +44,7 @@ export default function WhatIsGaudi() {
         textContent={
           <>
             <p>
-              Create a simple text file in your favourite IDE (eg.{" "}
+              Create a simple text file in your favorite IDE (eg.{" "}
               <code className="text-white italic">bookreviews.gaudi</code>) and
               describe your data models and relations between them using{" "}
               <H color="white">intuitive</H>,{" "}
@@ -79,7 +79,7 @@ export default function WhatIsGaudi() {
               models, fields and relations. You can use queries and expressions
               to create powerful <H color="white">query fields</H> and{" "}
               <H color="white">computed fields</H> directly in your models and
-              even use them in other subqueries and filters.
+              even use them in other queries and filters.
             </p>
           </>
         }
@@ -136,7 +136,7 @@ export default function WhatIsGaudi() {
 
             <p className="mt-4">
               Run your code through <H color="white">Gaudi compiler</H> and it
-              will instanly build your app and you can run it, publish it or
+              will instantly build your app and you can run it, publish it or
               deploy it directly to your server. And that's it! :)
             </p>
           </>
@@ -169,7 +169,9 @@ export default function WhatIsGaudi() {
               <H color="white">development experience</H>.
             </p>
 
-            <p className="mt-4">Let's got through some of them ...</p>
+            <p className="mt-8 font-bold text-white">
+              Let's go through some of them ...
+            </p>
           </>
         }
       />
@@ -183,7 +185,7 @@ export default function WhatIsGaudi() {
         textContent={
           <>
             <p>
-              Most of Gaud's tools are easily available through Gaudi{" "}
+              Most of Gaudi's tools are easily available through Gaudi{" "}
               <H color="white">CLI</H>. Whether you want to{" "}
               <H color="white">setup</H> your next project,{" "}
               <H color="white">re/build</H> your existing Gaudi project, start
@@ -277,7 +279,7 @@ Commands:
             <p>
               Want to use your new API in your frontend, call it from another
               backend API, allow third party integrations ... Gaudi
-              automatically generates type-safe <H color="white">OpenAPI</H>{" "}
+              automatically generates <H color="white">OpenAPI</H>{" "}
               specifications and <H color="white">client libraries</H> that are
               self-documented, type-safe and easily integrated in other
               development tools.

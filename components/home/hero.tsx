@@ -1,6 +1,9 @@
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import { CodeSnippet } from "@/components/CodeSnippet";
-import { HeroBackground, HeroBackgroundImage } from "@/components/home/HeroBackground";
+import {
+  HeroBackground,
+  HeroBackgroundImage,
+} from "@/components/home/HeroBackground";
 
 export default function Hero() {
   return (
@@ -24,7 +27,7 @@ export default function Hero() {
               With Gaudi out of the box you get expressive data modeling,
               customizable APIs, automatic database migration and population,
               powerful declarative database query engine, full stack
-              type-safety, client libary generators and much more.
+              type-safety, client library generators and much more.
             </p>
             <div className="h-9 xl:h-10"></div>
             <div className="xl: flex flex-col gap-4 xl:flex-row">
