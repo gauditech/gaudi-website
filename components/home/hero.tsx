@@ -1,12 +1,13 @@
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import { CodeSnippet } from "@/components/CodeSnippet";
+import { FunctionComponent } from "react";
 
 export default function Hero() {
   return (
     <>
       <section className="relative px-6 sm:px-8 lg:flex lg:w-full lg:items-center lg:justify-between lg:gap-12">
         <div className="lg:mb-10 lg:w-1/2">
-          <div className="lg:mx-auto lg:max-w-2xl">
+          <div className="lg:mx-auto lg:max-w-2xl text-white">
             <h2 className="font-extrabold text-white text-3xl sm:text-5xl lg:text-6xl xl:text-7xl">
               Build <span className="text-yellow-500">better</span> apps in a{" "}
               <span className="text-blue-500">fraction</span> of time
@@ -40,6 +41,8 @@ export default function Hero() {
           </div>
         </div>
         <div className="relative -mx-6 mt-6 overflow-hidden p-4 sm:-mx-8 sm:p-8 md:p-10 lg:mt-0 lg:w-1/2 lg:rounded-l-lg lg:p-16">
+          <BgImage className="block lg:hidden -z-1" />
+
           {/* Gaudi hero code snippet */}
           <AppWindowFrame title="bookreviews.gaudi">
             <CodeSnippet
@@ -48,10 +51,9 @@ export default function Hero() {
           </AppWindowFrame>
         </div>
 
-        <div
-          className="absolute top-0 left-0 w-full h-full -z-1"
-          style={{ backgroundImage: `url(/images/gaudi_pattern4.svg)` }}
-        >
+        <div className="absolute hidden lg:block top-0 left-0 w-full h-full -z-1">
+          <BgImage />
+
           <div className="absolute hidden lg:block inset-0 h-full w-full box-content">
             <div
               className="absolute inset-0 -start-[25%]  bg-gradient-to-r from-gray-900"
@@ -70,3 +72,15 @@ export default function Hero() {
     </>
   );
 }
+
+type BgImageProps = {
+  className?: string;
+};
+const BgImage: FunctionComponent<BgImageProps> = (props) => {
+  return (
+    <div
+      className={`absolute top-0 left-0 w-full h-full ${props.className ?? ""}`}
+      style={{ backgroundImage: `url(/images/gaudi_pattern4.svg)` }}
+    ></div>
+  );
+};
