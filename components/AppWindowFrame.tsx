@@ -12,7 +12,9 @@ export const AppWindowFrame: FunctionComponent<AppWindowFrameProps> = (
 ) => {
   return (
     <div
-      className={`border-2 border rounded-t-xl rounded-b-sm border-gray-500 bg-gray-500 ${props.className}`}
+      className={`block border-2 border rounded-t-xl rounded-b-sm border-gray-500 bg-gray-500 lg:inline-block lg:max-w-full ${
+        props.className ?? ""
+      }`}
     >
       <div className="flex gap-2 h-8 bg-gray-500 px-2 rounded-t-xl w-full items-center shadow">
         <div className="grow-0 flex gap-1 nowrap align-items-center">
@@ -25,7 +27,7 @@ export const AppWindowFrame: FunctionComponent<AppWindowFrameProps> = (
         </div>
       </div>
 
-      <div className="overflow-hidden bg-gray-800 rounded-b-sm p-2">
+      <div className="overflow-hidden bg-gray-800 rounded-b-sm p-4">
         {props.children}
       </div>
     </div>
