@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between px-6 py-9 lg:px-12 text-white ">
+    <header className="flex items-center justify-between px-6 py-6 lg:px-12 text-white ">
       <a className="active" href="/">
         <svg
           className="h-10"
