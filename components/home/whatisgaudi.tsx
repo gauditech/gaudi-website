@@ -51,9 +51,8 @@ export default function WhatIsGaudi() {
               <H color="white">human-readable</H> and{" "}
               <H color="white">database agnostic</H> language. Enrich your
               models through first-class support for{" "}
-              <H color="white">computed</H> fields,
-              <H color="white">query</H> fields or even custom code{" "}
-              <H color="white">hooks</H> fields.
+              <H color="white">computed</H> fields, <H color="white">query</H>{" "}
+              fields or even custom code <H color="white">hooks</H> fields.
             </p>
           </>
         }
@@ -141,7 +140,6 @@ export default function WhatIsGaudi() {
             </p>
           </>
         }
-        ctaText="Learn more"
         snippetContent={
           <AppWindowFrame title="https://your.domain/api/authors">
             <CodeSnippet
@@ -334,7 +332,7 @@ type ContentSectionProps = {
   orientation: SectionOrientation;
   title?: ReactNode;
   textContent: ReactNode;
-  ctaText?: ReactNode;
+  cta?: { title: ReactNode; link: string };
   imageContent?: StaticImageData;
   snippetContent?: ReactNode;
   tags?: SectionTag[];
@@ -370,10 +368,10 @@ function ContentSection(props: ContentSectionProps) {
     <>
       {props.textContent && <div>{props.textContent}</div>}
 
-      {props.ctaText && (
+      {props.cta && (
         <div className="text-center mt-8">
-          <Link href="/contact" className="btn btn-blue">
-            {props.ctaText}
+          <Link href={props.cta.link} className="btn btn-blue">
+            {props.cta.title}
           </Link>
         </div>
       )}
