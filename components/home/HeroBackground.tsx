@@ -8,14 +8,14 @@ export const HeroBackground: FunctionComponent<HeroBackgroundProps> = (
 ) => {
   return (
     <div
-      className={`absolute hidden lg:block top-0 left-0 w-full h-full -z-1 ${
+      className={`absolute top-0 left-0 w-full h-full -z-1 ${
         props.className ?? ""
       }`}
       aria-hidden="true"
     >
       <HeroBackgroundImage />
 
-      <div className="absolute hidden lg:block inset-0 h-full w-full box-content">
+      <div className="absolute inset-0 h-full w-full box-content">
         <div className="absolute inset-0 -start-[25%]  bg-gradient-to-r from-gray-900"></div>
 
         <div className="absolute inset-0 -start-[25%] bg-gradient-to-t from-gray-900"></div>

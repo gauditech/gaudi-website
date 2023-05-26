@@ -12,6 +12,13 @@ export default function FeaturesHead() {
             <div className="h-6"></div>
             <p className="text-lg lg:text-xl">
               Detailed list of Gaudi features
+              <br />
+              // TODO: add more text
+              <br />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
         </div>

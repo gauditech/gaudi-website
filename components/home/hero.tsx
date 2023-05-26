@@ -1,5 +1,6 @@
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import { CodeSnippet } from "@/components/CodeSnippet";
+import { SectionHeading } from "@/components/SectionHeading";
 import {
   HeroBackground,
   HeroBackgroundImage,
@@ -10,18 +11,17 @@ export default function Hero() {
     <>
       <section className="relative px-6 sm:px-8 lg:flex lg:w-full lg:items-center lg:justify-between lg:gap-12">
         <div className="lg:mb-10 lg:w-1/2">
-          <div className="lg:mx-auto lg:max-w-2xl text-white">
-            <h2 className="font-extrabold text-white text-3xl sm:text-5xl lg:text-6xl xl:text-7xl">
+          <div className="lg:mx-auto lg:max-w-2xl text-white pt-10 lg:pt-0">
+            <SectionHeading level={2} className="mt-10 ">
               Build <span className="text-yellow-500">better</span> apps in a{" "}
               <span className="text-blue-500">fraction</span> of time
-            </h2>
+            </SectionHeading>
             <div className="h-6"></div>
             <p className="text-lg lg:text-xl">
               Gaudi is a declarative programming language and a backend
               framework that makes it easier to build and maintain web
-              application APIs. Simply describe your models and APIs in a
-              declarative way and instantly get your app with batteries
-              included.
+              application APIs. Describe your models and APIs in a declarative
+              way and instantly get your app with batteries included.
               <br />
               <br />
               With Gaudi out of the box you get expressive data modeling,
@@ -44,8 +44,6 @@ export default function Hero() {
           </div>
         </div>
         <div className="relative -mx-6 mt-6 overflow-hidden p-4 sm:-mx-8 sm:p-8 md:p-10 lg:mt-0 lg:w-1/2 lg:rounded-l-lg lg:p-16">
-          <HeroBackgroundImage className="block lg:hidden -z-1" />
-
           {/* Gaudi hero code snippet */}
           <AppWindowFrame title="bookreviews.gaudi">
             <CodeSnippet

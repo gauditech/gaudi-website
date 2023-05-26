@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { CodeSnippet } from "@/components/CodeSnippet";
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import GaudiApiClientImg from "@/public/images/screenshots/gaudi_api_client.png";
+import { SectionHeading } from "@/components/SectionHeading";
 
 type SectionOrientation = "right" | "left";
 type SectionTag = { text: string; link?: string };
@@ -101,9 +102,9 @@ export default function WhatIsGaudi() {
             <p>
               Expose your data through default{" "}
               <H color="white">CRUD endpoints</H> with a single line of Gaudi
-              code. Or go beyond CRUD and customize default or write completely{" "}
+              code. Go beyond CRUD and customize default or write completely{" "}
               <H color="white">custom endpoints</H> using full declarativeness
-              and type-safety of Gaudi.
+              and type-safety of Gaudi or even custom code hooks.
             </p>
           </>
         }
@@ -118,7 +119,9 @@ export default function WhatIsGaudi() {
 
       <ContentSection
         orientation="left"
-        title=<>Build your app</>
+        title=<>
+          Build your <H color="blue">app</H>
+        </>
         textContent={
           <>
             <p>
@@ -360,7 +363,7 @@ function ContentSection(props: ContentSectionProps) {
 
   const titlePart = props.title && (
     <>
-      <Heading level={props.headingLevel ?? 3}>{props.title}</Heading>
+      <SectionHeading level={props.headingLevel ?? 3}>{props.title}</SectionHeading>
     </>
   );
 
@@ -435,28 +438,7 @@ function ContentSection(props: ContentSectionProps) {
   );
 }
 
-/**
- * Render heading
- */
-type HeadingProps = PropsWithChildren<{
-  level: 2 | 3;
-  className?: string;
-}>;
-export const Heading: FunctionComponent<HeadingProps> = (props) => {
-  const level = props.level;
-  const className = [
-    props.className,
-    level === 2
-      ? `font-extrabold text-white text-3xl sm:text-5xl lg:text-6xl xl:text-7xl`
-      : undefined,
-    level === 3
-      ? `font-extrabold text-white text-2xl sm:text-4xl lg:text-5xl xl:text-6xl`
-      : undefined,
-  ].join(" ");
-  const children = props.children;
 
-  return <h2 className={className}>{children}</h2>;
-};
 
 /** Make children highlighted */
 type HighlightedProps = PropsWithChildren<{
