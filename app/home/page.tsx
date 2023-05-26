@@ -3,7 +3,7 @@ import WhatIsGaudi from "@/components/home/whatisgaudi";
 import MailinglistCta from "@/components/mailinglist-cta";
 
 export const metadata = {
-  title: "Gaud - Home",
+  title: "Gaudi - Home",
   description: "Gaudi home page",
 };
 
