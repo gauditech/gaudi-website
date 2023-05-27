@@ -6,6 +6,7 @@ import { CodeSnippet } from "@/components/CodeSnippet";
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import GaudiApiClientImg from "@/public/images/screenshots/gaudi_api_client.png";
 import { SectionHeading } from "@/components/SectionHeading";
+import { HeroBackground } from "@/components/home/HeroBackground";
 
 type SectionOrientation = "right" | "left";
 type SectionTag = { text: string; link?: string };
@@ -340,11 +341,13 @@ type ContentSectionProps = {
   snippetContent?: ReactNode;
   tags?: SectionTag[];
   singleCol?: boolean;
+  // heading level also renders some artifacts
   headingLevel?: 2 | 3;
 };
 function ContentSection(props: ContentSectionProps) {
   // style variants
   const variants = {
+    section: props.singleCol ?? false ? "lg:grid-cols-1" : "lg:grid-cols-2",
     grid: {
       left: {
         title: "order-1",
@@ -363,7 +366,9 @@ function ContentSection(props: ContentSectionProps) {
 
   const titlePart = props.title && (
     <>
-      <SectionHeading level={props.headingLevel ?? 3}>{props.title}</SectionHeading>
+      <SectionHeading level={props.headingLevel ?? 3}>
+        {props.title}
+      </SectionHeading>
     </>
   );
 
@@ -398,10 +403,11 @@ function ContentSection(props: ContentSectionProps) {
   return (
     <>
       <section
-        className={`px-6 sm:px-8 lg:grid ${
-          props.singleCol ?? false ? "lg:grid-cols-1" : "lg:grid-cols-2"
-        } lg:grid-flow-row lg:gap-10 lg:w-full lg:items-start lg:justify-between`}
+        className={`relative px-6 sm:px-8 lg:grid ${variants.section} lg:grid-flow-row lg:gap-10 lg:w-full lg:items-start lg:justify-between`}
       >
+        {/* draw bg only on level 2 */}
+        {props.headingLevel === 2 && <HeroBackground secondary />}
+
         {titlePart && (
           <>
             <div className={`${variants.grid[props.orientation].title}`}>
@@ -437,8 +443,6 @@ function ContentSection(props: ContentSectionProps) {
     </>
   );
 }
-
-
 
 /** Make children highlighted */
 type HighlightedProps = PropsWithChildren<{

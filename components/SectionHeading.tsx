@@ -4,7 +4,7 @@ import { FunctionComponent, PropsWithChildren } from "react";
  * Render heading
  */
 export type SectionHeadingProps = PropsWithChildren<{
-  level: 2 | 3 | 4;
+  level: 2 | 3 | 4 | 5;
   className?: string;
 }>;
 export const SectionHeading: FunctionComponent<SectionHeadingProps> = (
@@ -19,6 +19,8 @@ export const SectionHeading: FunctionComponent<SectionHeadingProps> = (
       ? `font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl`
       : level === 4
       ? `font-extrabold text-white text-xl sm:text-2xl lg:text-3xl`
+      : level === 5
+      ? `font-extrabold text-white text-lg sm:text-xl lg:text-2xl`
       : undefined,
   ].join(" ");
   const children = props.children;

@@ -1,10 +1,7 @@
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import { CodeSnippet } from "@/components/CodeSnippet";
 import { SectionHeading } from "@/components/SectionHeading";
-import {
-  HeroBackground,
-  HeroBackgroundImage,
-} from "@/components/home/HeroBackground";
+import { HeroBackground } from "@/components/home/HeroBackground";
 
 export default function Hero() {
   return (

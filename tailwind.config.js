@@ -133,6 +133,11 @@ module.exports = {
         "-5": "-5",
         "-10": "-10",
       },
+      grayscale: {
+        25: "25%",
+        50: "50%",
+        75: "75%",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],

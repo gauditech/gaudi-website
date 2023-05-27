@@ -24,6 +24,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import { CodeSnippet } from "@/components/CodeSnippet";
+import { HeroBackground } from "@/components/home/HeroBackground";
 
 export default function FeaturesContent() {
   return (
@@ -343,7 +344,9 @@ type ContentSectionProps = {
 };
 const ContentSection: FunctionComponent<ContentSectionProps> = (props) => {
   return (
-    <section className="px-6 sm:px-8">
+    <section className="relative px-6 sm:px-8">
+      <HeroBackground secondary />
+
       <div className="lg:max-w-2xl xl:max-w-2xl lg:mx-auto">
         <div className="text-center">
           {"fa" in props.icon && (
@@ -406,7 +409,7 @@ const ContentSubsection: FunctionComponent<ContentSubsectionProps> = (
           <img src={props.icon.img} className="w-[1.5rem] grayscale" />
         )}
 
-        <SectionHeading level={4}>{props.title}</SectionHeading>
+        <SectionHeading level={5}>{props.title}</SectionHeading>
       </div>
       {props.description}
     </div>
