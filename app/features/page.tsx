@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Gaud - Features",
+  title: "Gaudi - Features",
   description: "List of Gaudi features",
 };
 

@@ -19,23 +19,10 @@ export const CodeSnippet: React.FC<CodeSnippetProps> = (
         // lineHeight: "1.3",
         // whiteSpace: "pre",
       }}
-      className={`whitespace-pre text-sm md:text-base font-normal leading-6 ${
+      className={`whitespace-pre text-sm md:text-base font-normal leading-6 p-4 ${
         props.className ?? ""
       }`}
       dangerouslySetInnerHTML={{ __html: props.code }}
     ></div>
-  );
-};
-
-/**
- * Render code snippet in a custom frame
- */
-export const FramedCodeSnippet: FunctionComponent<CodeSnippetProps> = (
-  props
-) => {
-  return (
-    <div className="relative overflow-hidden bg-gray-800 p-3 text-md rounded-lg sm:text-base md:max-w-full lg:max-w-max xl:rounded-xl xl:p-4">
-      <CodeSnippet {...props} />
-    </div>
   );
 };

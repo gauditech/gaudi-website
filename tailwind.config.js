@@ -16,10 +16,6 @@ module.exports = {
         "2xl": "2rem",
         "3xl": "3rem",
       },
-      flexGrow: {
-        0: "0",
-        1: "1",
-      },
       colors: {
         gray: {
           50: "#f8f4fa",
