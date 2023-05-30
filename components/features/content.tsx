@@ -50,7 +50,10 @@ export default function FeaturesContent() {
               "Describe your data models and relations using intuitive, human-readable and database agnostic language",
             icon: { fa: faObjectGroup },
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <CodeSnippet
                   className="text-sm md:text-sm"
                   code={`<div><span style="color: #c586c0;">model</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">Author</span><span style="color: #cccccc;"> {</span></div><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">field</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">name</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">type</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">string</span><span style="color: #cccccc;"> }</span></div><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">relation</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">books</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">from</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">Book</span><span style="color: #cccccc;">, </span><span style="color: #c586c0;">through</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">author</span><span style="color: #cccccc;"> }</span></div><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">query</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">books_count</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">from</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">books</span><span style="color: #cccccc;">, </span><span style="color: #c586c0;">count</span><span style="color: #cccccc;"> }</span></div><div><span style="color: #cccccc;">}</span></div><br><div><span style="color: #c586c0;">model</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">Book</span><span style="color: #cccccc;"> {</span></div><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">reference</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">author</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">to</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">Author</span><span style="color: #cccccc;"> }</span></div><div><span style="color: #cccccc;">    </span><span style="color: #c586c0;">field</span><span style="color: #cccccc;"> </span><span style="color: #9cdcfe;">title</span><span style="color: #cccccc;"> { </span><span style="color: #c586c0;">type</span><span style="color: #cccccc;"> </span><span style="color: #4ec9b0;">string</span><span style="color: #cccccc;">, </span><span style="color: #c586c0;">validate</span><span style="color: #cccccc;"> { </span><span style="color: #9cdcfe;">min</span><span style="color: #cccccc;"> </span><span style="color: #b5cea8;">4</span><span style="color: #cccccc;">, </span><span style="color: #9cdcfe;">max</span><span style="color: #cccccc;"> </span><span style="color: #b5cea8;">40</span><span style="color: #cccccc;"> } }</span></div><div><span style="color: #cccccc;">}</span></div>`}
@@ -64,7 +67,10 @@ export default function FeaturesContent() {
             description:
               "Extend your models using powerful and expressive expression language with type-safe support for models, fields and relations",
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <CodeSnippet
                   className="text-sm md:text-sm"
                   code={`<div><span style="color: #c586c0;">model</span><span style="color: #d4d4d4;"> </span><span style="color: #4ec9b0;">BookReading</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">reference</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">book</span><span style="color: #d4d4d4;"> { </span><span style="color: #c586c0;">to</span><span style="color: #d4d4d4;"> </span><span style="color: #4ec9b0;">Book</span><span style="color: #d4d4d4;"> }</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">reference</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">author</span><span style="color: #d4d4d4;"> { </span><span style="color: #c586c0;">to</span><span style="color: #d4d4d4;"> </span><span style="color: #4ec9b0;">Author</span><span style="color: #d4d4d4;"> }</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">field</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">pages_read</span><span style="color: #d4d4d4;"> { </span><span style="color: #c586c0;">type</span><span style="color: #d4d4d4;"> </span><span style="color: #4ec9b0;">integer</span><span style="color: #d4d4d4;"> }</span></div><br><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">computed</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">pages_total</span><span style="color: #d4d4d4;"> { </span><span style="color: #9cdcfe;">book</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">pages</span><span style="color: #d4d4d4;"> }</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">computed</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">pages_left</span><span style="color: #d4d4d4;"> { </span><span style="color: #9cdcfe;">pages_total</span><span style="color: #d4d4d4;"> </span><span style="color: #d4d4d4;">-</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">pages_read</span><span style="color: #d4d4d4;"> }</span></div><div><span style="color: #d4d4d4;">}</span></div>`}
@@ -78,7 +84,10 @@ export default function FeaturesContent() {
             description:
               "Use the full power of query language to query your model's relations and create dynamic query fields. Use query fields in other query selects nad filters just as any other field.",
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <CodeSnippet
                   code={`<div><span style="color: #c586c0;">query</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">top_5_popular_books</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">from</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">books</span><span style="color: #d4d4d4;">,</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">filter</span><span style="color: #d4d4d4;"> { </span><span style="color: #9cdcfe;">review_score</span><span style="color: #d4d4d4;"> </span><span style="color: #d4d4d4;">&gt;</span><span style="color: #d4d4d4;"> </span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;"> },</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">order by</span><span style="color: #d4d4d4;"> { </span><span style="color: #9cdcfe;">positive_reviews_count</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">desc</span><span style="color: #d4d4d4;"> },</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">limit</span><span style="color: #d4d4d4;"> </span><span style="color: #b5cea8;">5</span></div><div><span style="color: #d4d4d4;">}</span></div>`}
                 />
@@ -91,7 +100,10 @@ export default function FeaturesContent() {
             description:
               "If Gaudi queries and expressions are not enough you can even write your properties using custom code hooks.",
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <CodeSnippet
                   code={`<div><span style="color: #c586c0;">hook</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">nameAndDesc</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">  </span><span style="color: #c586c0;">arg</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">test</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">query</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">select</span><span style="color: #d4d4d4;"> { </span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">, </span><span style="color: #9cdcfe;">description</span><span style="color: #d4d4d4;"> }</span></div><div><span style="color: #d4d4d4;">  }</span></div><div><span style="color: #d4d4d4;">  </span><span style="color: #c586c0;">inline</span><span style="color: #d4d4d4;"> </span><span style="color: #ce9178;">"test.name + ': ' + test.description"</span></div><div><span style="color: #d4d4d4;">}</span></div>`}
                 />
@@ -114,7 +126,10 @@ export default function FeaturesContent() {
             description:
               "Expose only CRUD APIs that you actually need. With a single line of Gaudi",
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <CodeSnippet
                   code={`<div><span style="color: #c586c0;">entrypoint</span><span style="color: #d4d4d4;"> </span><span style="color: #4ec9b0;">Author</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">create</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">endpoint</span><span style="color: #d4d4d4;"> {}</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">list</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">endpoint</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">        </span><span style="color: #c586c0;">pageable</span></div><div><span style="color: #d4d4d4;">    }</span></div><br><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">get</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">endpoint</span><span style="color: #d4d4d4;"> {}</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">update</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">endpoint</span><span style="color: #d4d4d4;"> {}</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #6a9955;">// delete endpoint {} // eg. NO delete endpoint</span></div><div><span style="color: #d4d4d4;">}</span></div><div><span style="color: #d4d4d4;"></span></div>`}
                 />
@@ -127,7 +142,10 @@ export default function FeaturesContent() {
             description:
               "CRUD is not always enough. Extend default or write custom APIs using Gaudi or even custom hooks code.",
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <CodeSnippet
                   code={`<div><span style="color: #c586c0;">entrypoint</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">books</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">create</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">endpoint</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">        </span><span style="color: #c586c0;">authorize</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">            </span><span style="color: #9cdcfe;">@auth</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">id</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">is not</span><span style="color: #d4d4d4;"> </span><span style="color: #4fc1ff;">null</span></div><div><span style="color: #d4d4d4;">        }</span></div><br><div><span style="color: #d4d4d4;">        </span><span style="color: #c586c0;">action</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">            </span><span style="color: #c586c0;">create</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">as</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">book</span><span style="color: #d4d4d4;"> {}</span></div><div><span style="color: #d4d4d4;">            </span><span style="color: #c586c0;">create</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">book</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">reviews</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">as</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">review</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">                </span><span style="color: #c586c0;">set</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">is_positive</span><span style="color: #d4d4d4;"> </span><span style="color: #4fc1ff;">true</span></div><div><span style="color: #d4d4d4;">                </span><span style="color: #c586c0;">set</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">reviewer</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">book</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">author</span></div><div><span style="color: #d4d4d4;">            }</span></div><div><span style="color: #d4d4d4;">}   }   }</span></div>`}
                 />
@@ -140,7 +158,10 @@ export default function FeaturesContent() {
             description:
               "Secure your application using authentication and authorization rules that fully support Gaudi expression langugage. Support for local auth, social, OAuth 2.0, ...",
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <CodeSnippet
                   code={`<div><span style="color: #c586c0;">auth</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">method</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">basic</span><span style="color: #d4d4d4;"> {}</span></div><div><span style="color: #d4d4d4;">}</span></div><div><span style="color: #c586c0;">api</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #c586c0;">entrypoint</span><span style="color: #d4d4d4;"> </span><span style="color: #4ec9b0;">Author</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">        </span><span style="color: #c586c0;">authorize</span><span style="color: #d4d4d4;"> {</span></div><div><span style="color: #d4d4d4;">            </span><span style="color: #9cdcfe;">@auth</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">id</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">is not</span><span style="color: #d4d4d4;"> </span><span style="color: #4fc1ff;">null</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">and</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">@auth</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;"> </span><span style="color: #c586c0;">is</span><span style="color: #d4d4d4;"> </span><span style="color: #ce9178;">"Asimov"</span></div><div><span style="color: #d4d4d4;">        }</span></div><div><span style="color: #d4d4d4;">    }</span></div><div><span style="color: #d4d4d4;">}</span></div>`}
                 />
@@ -309,7 +330,10 @@ App is started on localhost:3001
             description:
               "Iterate your ideas during development and automatically sync your database. Once happy with your changes, create migration scripts, review them and apply to your production when ready.",
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <Image
                   src={GaudiDbMigrationsImg.src}
                   alt="Database migrations"
@@ -326,7 +350,10 @@ App is started on localhost:3001
             description:
               "Need a small set of data for development, a strict set of data for tests or a large amount of randomized data for application demo? Use populators to always have your database populated with appropriate data.",
             screenshot: (
-              <AppWindowFrame className="w-full" title="bookreviews.gaudi">
+              <AppWindowFrame
+                className="w-full"
+                title="bookreviews.gaudi &mdash; bookreviews"
+              >
                 <Image
                   src={GaudiDbPopulatorImg.src}
                   alt="Database populator"
@@ -419,7 +446,10 @@ const ContentSubsection: FunctionComponent<ContentSubsectionProps> = (
 
         <SectionHeading level={5}>{props.title}</SectionHeading>
       </div>
-      {props.description}
+      <div>
+        {/* padding=icon width + flex gap */}
+        <p className="pl-[2.5rem] text-lg lg:text-xl">{props.description}</p>
+      </div>
     </div>
   );
 };
