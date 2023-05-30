@@ -40,7 +40,9 @@ export const AppWindowFrame: FunctionComponent<AppWindowFrameProps> = (
       </div>
 
       {/* content */}
-      <div className={`overflow-hidden rounded-md ${variants.content}`}>
+      <div
+        className={`overflow-auto scrollbar-none rounded-md ${variants.content}`}
+      >
         {props.children}
       </div>
     </div>

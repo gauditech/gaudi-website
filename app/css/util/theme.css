@@ -1,13 +1,17 @@
-/* Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+/* ---------- Global styles ----- */
 
 HTML {
   font-size: 16px;
+}
+
+/* ---------- Utils ----- */
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+/* For IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
