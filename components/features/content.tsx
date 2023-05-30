@@ -43,6 +43,7 @@ export default function FeaturesContent() {
         icon={{ fa: faObjectGroup }}
         title="Data modeling on steroids"
         description="Define your models and extend them with queries, computed values or assign custom data using hooks"
+        firstSection
         subsections={[
           {
             title: "Data models",
@@ -375,12 +376,14 @@ type ContentSectionProps = {
   icon: { fa: IconDefinition } | { img: string };
   title: ReactNode;
   description: ReactNode;
+  firstSection?: boolean;
   subsections: ContentSubsectionProps[];
 };
 const ContentSection: FunctionComponent<ContentSectionProps> = (props) => {
   return (
     <section className="relative px-6 sm:px-8">
-      <HeroBackground secondary />
+      {/* the first section blends into page's default bg so no need for this one */}
+      {!props.firstSection && <HeroBackground secondary className="-top-16" />}
 
       <div className="lg:max-w-2xl xl:max-w-2xl lg:mx-auto">
         <div className="text-center">
