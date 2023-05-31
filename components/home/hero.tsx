@@ -48,8 +48,6 @@ export default function Hero() {
             />
           </AppWindowFrame>
         </div>
-
-        <HeroBackground />
       </section>
 
       <div className="h-32 lg:h-64"></div>

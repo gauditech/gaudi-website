@@ -1,5 +1,3 @@
-import { HeroBackground } from "@/components/home/HeroBackground";
-
 export default function FeaturesHead() {
   return (
     <>
@@ -20,8 +18,6 @@ export default function FeaturesHead() {
           </div>
         </div>
       </section>
-
-      <HeroBackground className="top-[88px]" />
     </>
   );
 }

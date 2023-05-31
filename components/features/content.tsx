@@ -412,7 +412,10 @@ const ContentSection: FunctionComponent<ContentSectionProps> = (props) => {
       <div className="xl:max-w-6xl lg:mx-auto">
         <div className="flex flex-row flex-wrap">
           {props.subsections.map((sub) => (
-            <div className="inline-block w-full mb-16 p-8 lg:w-1/2">
+            <div
+              key={sub.title}
+              className="inline-block w-full mb-16 p-8 lg:w-1/2"
+            >
               <ContentSubsection
                 icon={sub.icon}
                 title={sub.title}
@@ -429,7 +432,7 @@ const ContentSection: FunctionComponent<ContentSectionProps> = (props) => {
 
 type ContentSubsectionProps = {
   icon: { fa: IconDefinition } | { img: string };
-  title: ReactNode;
+  title: string;
   description: ReactNode;
   screenshot: ReactNode;
 };
