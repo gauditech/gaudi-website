@@ -1,37 +1,40 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import NotFoundImage from '@/public/images/404.jpg'
-import PageIllustration from '@/components/page-illustration'
+import { HeroBackground } from "@/components/home/HeroBackground";
+import { SectionHeading } from "@/components/SectionHeading";
 
 export default function NotFound() {
   return (
     <>
-      {/*  Page illustration */}
-      <div className="relative max-w-6xl mx-auto h-0 pointer-events-none -z-1" aria-hidden="true">
-        <PageIllustration />
-      </div>
+      <HeroBackground className="top-[88px]" />
 
-      <section className="relative">
+      <section className="relative px-6 sm:px-8 lg:w-full lg:items-center lg:justify-between lg:gap-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="relative inline-flex justify-center items-center">
-                <Image className="hidden sm:block opacity-50 md:opacity-80" src={NotFoundImage} width={768} height={432} priority alt="404" />
-                <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900" aria-hidden="true"></div>
-                <div className="sm:absolute w-full">
-                  <h1 className="h3 font-red-hat-display mb-8">Hm, the page you were looking for doesn't exist anymore.</h1>
-                  <Link className="btn text-white bg-teal-500 hover:bg-teal-400 inline-flex items-center" href="/">
-                    <span>Back to Appy</span>
-                    <svg className="w-3 h-3 shrink-0 mt-px ml-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                      <path className="fill-current" d="M6.602 11l-.875-.864L9.33 6.534H0v-1.25h9.33L5.727 1.693l.875-.875 5.091 5.091z" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
+          <div className="pt-32 pb-10 md:pt-40 md:pb-16">
+            <div className="w-[75%] mx-auto text-center text-white">
+              <div className="h-12"></div>
+
+              <SectionHeading level={3}>
+                Hmmm, the page you were looking for doesn't exist anymore ...
+              </SectionHeading>
+
+              <div className="h-12"></div>
+
+              <p>
+                <a
+                  className="btn btn-blue text-white border-2 w-full xl:w-60"
+                  href="/"
+                >
+                  Back to home page
+                </a>
+              </p>
             </div>
           </div>
         </div>
       </section>
+
+      <div className="h-32"></div>
+      <div className="h-32"></div>
+      <div className="h-32"></div>
+      <div className="h-32"></div>
     </>
   );
 }
