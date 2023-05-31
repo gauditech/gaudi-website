@@ -1,4 +1,4 @@
-import HowGaudiWorks from "@/public/images/how_gaudi_works.png";
+import HowGaudiWorks from "@/public/images/screenshots/how_gaudi_works.png";
 import Image from "next/image";
 
 export default function HowItWorks() {

@@ -1,4 +1,4 @@
-import GaudiLogo from "@/public/images/gaudi_logo.svg";
+import GaudiLogo from "@/public/images/logo/gaudi_logo.svg";
 
 export default function Logo() {
   return (

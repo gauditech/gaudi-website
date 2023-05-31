@@ -43,7 +43,7 @@ export const HeroBackgroundImage: FunctionComponent<
       className={`absolute top-0 left-0 w-full h-full bg-repeat-x ${
         props.className ?? ""
       }`}
-      style={{ backgroundImage: `url(/images/gaudi_pattern4.svg)` }}
+      style={{ backgroundImage: `url(/images/style/gaudi_pattern_1_3.svg)` }}
     ></div>
   );
 };

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Gaudi home page",
   icons: [
     {
-      url: "/images/gaudi_favicon.svg",
+      url: "/images/logo/gaudi_favicon.svg",
       type: "image/svg",
     },
   ],
