@@ -7,7 +7,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: "https://gaudi.tech"
   // async rewrites() {
   //   return [
   //     {
