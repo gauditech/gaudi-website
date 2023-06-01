@@ -29,24 +29,24 @@ export default function Header() {
         >
           Features
         </a>
-        <a
+        {/* <a
           className="mx-2 text-base font-semibold opacity-80 last:mr-0 hover:opacity-100 sm:mx-4 "
           href="/blog"
         >
           Blog
-        </a>
+        </a> */}
         <a
           className="mx-2 text-base font-semibold opacity-80 last:mr-0 hover:opacity-100 sm:mx-4 "
-          href="/docs/"
+          href="/docs"
         >
           Docs
         </a>
-        <a
+        {/* <a
           href="https://github.com/gaudiorg"
           className="mx-2 text-base font-semibold opacity-80 last:mr-0 hover:opacity-100 sm:mx-4 hidden sm:block"
         >
           GitHub
-        </a>
+        </a> */}
       </nav>
     </header>
   );

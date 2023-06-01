@@ -32,11 +32,11 @@ export default function Hero() {
                 className="btn btn-lg btn-blue text-white border-2 w-full xl:w-60"
                 href="/docs"
               >
-                Quick start
-              </a>
-              <a className="btn btn-lg w-full xl:w-60" href="/docs">
                 Read the docs
               </a>
+              {/* <a className="btn btn-lg w-full xl:w-60" href="/docs">
+                Read the docs
+              </a> */}
             </div>
           </div>
         </div>

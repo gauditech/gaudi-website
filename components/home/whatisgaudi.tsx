@@ -312,13 +312,13 @@ Commands:
         textContent={
           <>
             <section>
-              <div className="xl: flex flex-col gap-4 xl:flex-row">
+              <div className="xl:flex flex-col gap-4 xl:flex-row justify-center">
                 <a className="btn btn-lg btn-blue w-full xl:w-60" href="/docs">
-                  Quick start
-                </a>
-                <a className="btn btn-lg w-full xl:w-60" href="/docs">
                   Read the docs
                 </a>
+                {/*a className="btn btn-lg w-full xl:w-60" href="/docs">
+                  Quick start
+                </a>*/}
               </div>
             </section>
           </>
@@ -362,11 +362,15 @@ function ContentSection(props: ContentSectionProps) {
         image: "order-3 justify-self-center",
       },
     },
+    heading: props.singleCol ? "text-center" : "",
   };
 
   const titlePart = props.title && (
     <>
-      <SectionHeading level={props.headingLevel ?? 3}>
+      <SectionHeading
+        level={props.headingLevel ?? 3}
+        className={`${variants.heading}`}
+      >
         {props.title}
       </SectionHeading>
     </>
