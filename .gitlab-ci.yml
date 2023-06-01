@@ -12,7 +12,7 @@ pages:       # This job runs in the build stage, which runs first.
   script:
     - npm install
     - npm run build
-    - cp -a dist public
+    - cp -a out public
   artifacts:
     paths:
       - public
