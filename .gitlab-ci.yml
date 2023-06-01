@@ -2,18 +2,18 @@ image: node:latest
 
 cache:
   paths:
-    - draft/langat-website/node_modules/
+    - ./node_modules/
 
 stages:          # List of stages for jobs, and their order of execution
   - build
 
-pages:       # This job runs in the build stage, which runs first.
+staticpages:       # This job runs in the build stage, which runs first.
   stage: build
   before_script:
     - npm install
   script:
     - npm run build
-    - mv out/* public
+    - mv out staticpages
   artifacts:
     paths:
-      - public
+      - staticpages
