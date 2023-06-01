@@ -8,7 +8,7 @@ export const HeroBackground: FunctionComponent<HeroBackgroundProps> = (
   props
 ) => {
   const variants = {
-    secondary: props.secondary ? "opacity-40 grayscale-75" : "",
+    secondary: props.secondary ? "opacity-70 grayscale-50" : "",
   };
 
   return (
