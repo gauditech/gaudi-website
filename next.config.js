@@ -3,6 +3,11 @@ const { withContentlayer } = require("next-contentlayer");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
+  assetPrefix: "https://gaudiorg.gitlab.io/gaudi-website/"
   // async rewrites() {
   //   return [
   //     {

@@ -9,10 +9,11 @@ stages:          # List of stages for jobs, and their order of execution
 
 pages:       # This job runs in the build stage, which runs first.
   stage: build
-  script:
+  before_script:
     - npm install
+  script:
     - npm run build
-    - cp -a out public
+    - mv out/* public
   artifacts:
     paths:
       - public
