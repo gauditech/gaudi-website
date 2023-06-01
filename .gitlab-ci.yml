@@ -7,13 +7,14 @@ cache:
 stages:          # List of stages for jobs, and their order of execution
   - build
 
-staticpages:       # This job runs in the build stage, which runs first.
+pages:       # This job runs in the build stage, which runs first.
   stage: build
   before_script:
     - npm install
   script:
     - npm run build
-    - mv out staticpages
+    - rm -rf public
+    - mv out public
   artifacts:
     paths:
-      - staticpages
+      - public
