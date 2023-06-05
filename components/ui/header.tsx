@@ -37,7 +37,8 @@ export default function Header() {
         </a> */}
         <a
           className="mx-2 text-base font-semibold opacity-80 last:mr-0 hover:opacity-100 sm:mx-4 "
-          href="/docs"
+          href="https://docs.gaudi.tech"
+          target="_blank"
         >
           Docs
         </a>

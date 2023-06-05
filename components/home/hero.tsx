@@ -30,7 +30,8 @@ export default function Hero() {
             <div className="xl: flex flex-col gap-4 xl:flex-row">
               <a
                 className="btn btn-lg btn-blue text-white border-2 w-full xl:w-60"
-                href="/docs"
+                href="https://docs.gaudi.tech"
+                target="_blank"
               >
                 Read the docs
               </a>

@@ -326,7 +326,11 @@ Commands:
           <>
             <section>
               <div className="xl:flex flex-col gap-4 xl:flex-row justify-center">
-                <a className="btn btn-lg btn-blue w-full xl:w-60" href="/docs">
+                <a
+                  className="btn btn-lg btn-blue w-full xl:w-60"
+                  href="https://docs.gaudi.tech"
+                  target="_blank"
+                >
                   Read the docs
                 </a>
                 {/*a className="btn btn-lg w-full xl:w-60" href="/docs">
