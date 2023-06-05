@@ -319,8 +319,8 @@ Commands:
         orientation="left"
         singleCol
         title=<>
-          Start your <H color="green">new</H> <H color="blue">Gaudi</H>{" "}
-          <H color="yellow">project</H>
+          Ready to start your <H color="green">new</H> <H color="blue">Gaudi</H>{" "}
+          <H color="yellow">project</H>?
         </>
         textContent={
           <>
@@ -341,7 +341,6 @@ Commands:
           </>
         }
       />
-      <div className="lg:h-32"></div>
     </>
   );
 }
@@ -367,16 +366,12 @@ function ContentSection(props: ContentSectionProps) {
     section: props.singleCol ?? false ? "lg:grid-cols-1" : "lg:grid-cols-2",
     grid: {
       left: {
-        title: "order-1",
-        empty: "order-2",
-        textContent: "order-3",
-        image: "order-4 justify-self-start",
+        text: "order-1",
+        image: "order-2 justify-self-start",
       },
       right: {
-        title: "order-2 justify-self-start",
-        empty: "order-1",
-        textContent: "order-4 justify-self-start",
-        image: "order-3 justify-self-center",
+        text: "order-2 justify-self-start",
+        image: "order-1 justify-self-center",
       },
     },
     heading: props.singleCol ? "text-center" : "",
@@ -424,43 +419,35 @@ function ContentSection(props: ContentSectionProps) {
   return (
     <>
       <section
-        className={`relative px-6 sm:px-8 lg:grid ${variants.section} lg:grid-flow-row lg:gap-10 lg:w-full lg:items-start lg:justify-between`}
+        className={`relative px-6 sm:px-8 lg:grid ${variants.section} lg:grid-flow-row lg:gap-10 lg:w-full lg:items-center lg:justify-between`}
       >
         {/* draw bg only on level 2 */}
         {props.headingLevel === 2 && <HeroBackground secondary />}
 
-        {titlePart && (
-          <>
-            <div className={`${variants.grid[props.orientation].title}`}>
-              <div className="lg:max-w-xl xl:max-w-2xl lg:mx-auto">
-                {titlePart}
-              </div>
-            </div>
-            <div className={`${variants.grid[props.orientation].empty}`}>
-              &nbsp;
-            </div>
-          </>
-        )}
+        <div className={`${variants.grid[props.orientation].text}`}>
+          <div className="lg:max-w-xl xl:max-w-2xl lg:mx-auto mb-10">
+            {titlePart}
+          </div>
 
-        {(descriptionPart || imagePart) && (
-          <>
-            <div className={`${variants.grid[props.orientation].textContent}`}>
-              <div className="lg:max-w-xl xl:max-w-2xl lg:mx-auto">
-                <div className="hyphen-manual text-lg md:text-xl">
-                  {descriptionPart}
-                </div>
+          {descriptionPart && (
+            <div className="lg:max-w-xl xl:max-w-2xl lg:mx-auto">
+              <div className="hyphen-manual text-lg md:text-xl">
+                {descriptionPart}
               </div>
             </div>
-            <div className={`${variants.grid[props.orientation].image}`}>
-              <div className="md:px-8 lg:p-0 mt-8 mx-auto lg:max-w-lg xl:max-w-2xl">
-                {imagePart}
-              </div>
+          )}
+        </div>
+
+        {imagePart && (
+          <div className={`${variants.grid[props.orientation].image}`}>
+            <div className="md:px-8 lg:p-0 mx-auto lg:max-w-lg xl:max-w-2xl">
+              {imagePart}
             </div>
-          </>
+          </div>
         )}
       </section>
 
-      <div className="h-32"></div>
+      <div className="h-32 lg:h-64"></div>
     </>
   );
 }
