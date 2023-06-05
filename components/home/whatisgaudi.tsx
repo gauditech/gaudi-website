@@ -313,8 +313,6 @@ Commands:
         }
       />
 
-      <div className="lg:h-32"></div>
-
       <ContentSection
         orientation="left"
         singleCol
@@ -371,7 +369,7 @@ function ContentSection(props: ContentSectionProps) {
       },
       right: {
         text: "order-2 justify-self-start",
-        image: "order-1 justify-self-center",
+        image: "order-1",
       },
     },
     heading: props.singleCol ? "text-center" : "",
@@ -439,8 +437,12 @@ function ContentSection(props: ContentSectionProps) {
         </div>
 
         {imagePart && (
-          <div className={`${variants.grid[props.orientation].image}`}>
-            <div className="md:px-8 lg:p-0 mx-auto lg:max-w-lg xl:max-w-2xl">
+          <div
+            className={`${
+              variants.grid[props.orientation].image
+            } w-full mt-8 lg:mt-0`}
+          >
+            <div className="md:px-8 lg:p-0 lg:mx-auto lg:max-w-xl xl:max-w-2xl">
               {imagePart}
             </div>
           </div>
