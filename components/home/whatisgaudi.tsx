@@ -417,7 +417,7 @@ function ContentSection(props: ContentSectionProps) {
   return (
     <>
       <section
-        className={`relative px-6 sm:px-8 lg:grid ${variants.section} lg:grid-flow-row lg:gap-10 lg:w-full lg:items-center lg:justify-between`}
+        className={`relative px-6 sm:px-8 lg:grid ${variants.section} lg:grid-flow-row lg:gap-10 lg:w-full lg:items-start lg:justify-between`}
       >
         {/* draw bg only on level 2 */}
         {props.headingLevel === 2 && <HeroBackground secondary />}
