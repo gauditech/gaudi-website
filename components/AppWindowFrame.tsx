@@ -21,7 +21,7 @@ export const AppWindowFrame: FunctionComponent<AppWindowFrameProps> = (
 
   return (
     <div
-      className={`block border-8 border-t-2 border rounded-md border-gray-700 bg-gray-700 lg:inline-block lg:max-w-full ${
+      className={`block border-8 border-t-2 border rounded-md border-gray-700 bg-gray-700 lg:inline-block w-full ${
         props.className ?? ""
       }`}
     >

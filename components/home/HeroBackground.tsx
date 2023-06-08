@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, PropsWithChildren } from "react";
 
 export type HeroBackgroundProps = {
   className?: string;
@@ -45,5 +45,19 @@ export const HeroBackgroundImage: FunctionComponent<
       }`}
       style={{ backgroundImage: `url(/images/style/gaudi_pattern_1_3.svg)` }}
     ></div>
+  );
+};
+
+export type HeroFrameProps = PropsWithChildren<{
+  className?: string;
+}>;
+export const HeroFrame: FunctionComponent<HeroFrameProps> = (props) => {
+  return (
+    <div
+      className={`relative px-2 py-8 md:px-4 md:pt-12 lg:px-8 lg:pt-16 xl:px-16`}
+    >
+      <HeroBackground secondary />
+      {props.children}
+    </div>
   );
 };

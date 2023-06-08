@@ -6,7 +6,7 @@ import { CodeSnippet } from "@/components/CodeSnippet";
 import { AppWindowFrame } from "@/components/AppWindowFrame";
 import GaudiApiClientImg from "@/public/images/screenshots/gaudi_api_client.png";
 import { SectionHeading } from "@/components/SectionHeading";
-import { HeroBackground } from "@/components/home/HeroBackground";
+import { HeroBackground, HeroFrame } from "@/components/home/HeroBackground";
 
 type SectionOrientation = "right" | "left";
 type SectionTag = { text: string; link?: string };
@@ -422,13 +422,13 @@ function ContentSection(props: ContentSectionProps) {
         {/* draw bg only on level 2 */}
         {props.headingLevel === 2 && <HeroBackground secondary />}
 
-        <div className={`${variants.grid[props.orientation].text}`}>
-          <div className="lg:max-w-xl xl:max-w-2xl lg:mx-auto mb-10">
+        <div className={`${variants.grid[props.orientation].text} max-w-full`}>
+          <div className="lg:max-w-xl lg:mx-auto xl:max-w-2xl mb-10">
             {titlePart}
           </div>
 
           {descriptionPart && (
-            <div className="lg:max-w-xl xl:max-w-2xl lg:mx-auto">
+            <div className="lg:max-w-xl lg:mx-auto xl:max-w-2xl">
               <div className="hyphen-manual text-lg md:text-xl">
                 {descriptionPart}
               </div>
@@ -438,12 +438,10 @@ function ContentSection(props: ContentSectionProps) {
 
         {imagePart && (
           <div
-            className={`${
-              variants.grid[props.orientation].image
-            } mt-8 lg:mt-0 max-w-full`}
+            className={`${variants.grid[props.orientation].image} max-w-full`}
           >
-            <div className="md:px-8 lg:p-0 lg:mx-auto lg:max-w-xl xl:max-w-2xl">
-              {imagePart}
+            <div className="relative lg:max-w-xl lg:mx-auto xl:max-w-2xl">
+              <HeroFrame>{imagePart}</HeroFrame>
             </div>
           </div>
         )}
