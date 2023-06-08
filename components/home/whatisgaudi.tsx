@@ -440,7 +440,7 @@ function ContentSection(props: ContentSectionProps) {
           <div
             className={`${
               variants.grid[props.orientation].image
-            } w-full mt-8 lg:mt-0`}
+            } mt-8 lg:mt-0 max-w-full`}
           >
             <div className="md:px-8 lg:p-0 lg:mx-auto lg:max-w-xl xl:max-w-2xl">
               {imagePart}
