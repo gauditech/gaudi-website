@@ -285,19 +285,11 @@ Commands:
         textContent={
           <>
             <p>
-              Want to use your new API in your frontend, call it from another
-              backend API, allow third party integrations, ... ? Gaudi
-              automatically generates <H color="white">OpenAPI</H>{" "}
-              specifications and <H color="white">client libraries</H> that are
-              self-documented, type-safe and easily integrated in other
-              development tools.
-              <br />
-              <br />
               Gaudi automatically generates <H color="white">OpenAPI</H>{" "}
               specifications and <H color="white">client libraries</H> that are
-              self-documented, type-safe and easily integrated in other
-              development tools. Easily integrate with your frontend app,
-              another backend API or third party integrations.
+              type-safe, self-documented and seamlessly integrate into your
+              frontend app, another backend API, development tools or third
+              party integrations.
             </p>
           </>
         }
