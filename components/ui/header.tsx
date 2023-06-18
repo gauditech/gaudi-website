@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="flex items-center justify-between px-6 py-6 lg:px-8 xl:px-12 text-white ">
-      <a className="active" href="/">
+      <a className="active" href="/" aria-label="Gaudi home">
         <svg
           className="h-10"
           viewBox="0 0 284 128"
