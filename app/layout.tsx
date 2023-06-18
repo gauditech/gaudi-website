@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Gaudi | Build better apps in a fraction of time",
   description:
     "Describe your models and APIs in a declarative way and instantly get your app with batteries included.",
+  metadataBase: new URL("https://gaudi.tech/"),
 
   openGraph: {
     title: "Gaudi | Build better apps in a fraction of time",
@@ -24,7 +25,6 @@ export const metadata: Metadata = {
       "Describe your models and APIs in a declarative way and instantly get your app with batteries included.",
     type: "website",
     images: "/images/openapi-image.png",
-    url: "https://gaudi.tech",
   },
   twitter: {
     card: "summary_large_image",
