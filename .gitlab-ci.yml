@@ -4,10 +4,10 @@ cache:
   paths:
     - ./node_modules/
 
-stages:          # List of stages for jobs, and their order of execution
+stages: # List of stages for jobs, and their order of execution
   - build
 
-pages:       # This job runs in the build stage, which runs first.
+pages: # This job runs in the build stage, which runs first.
   stage: build
   before_script:
     - npm install
@@ -15,6 +15,7 @@ pages:       # This job runs in the build stage, which runs first.
     - npm run build
     - rm -rf public
     - mv out public
+    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
   artifacts:
     paths:
       - public
