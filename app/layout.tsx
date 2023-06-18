@@ -14,8 +14,22 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-  title: "Home - Gaudi",
-  description: "Gaudi home page",
+  title: "Gaudi | Build better apps in a fraction of time",
+  description:
+    "Describe your models and APIs in a declarative way and instantly get your app with batteries included.",
+
+  openGraph: {
+    title: "Gaudi | Build better apps in a fraction of time",
+    description:
+      "Describe your models and APIs in a declarative way and instantly get your app with batteries included.",
+    type: "website",
+    images: "/images/openapi-image.png",
+    url: "https://gaudi.tech",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+
   icons: [
     {
       url: "/images/logo/gaudi_favicon.svg",
