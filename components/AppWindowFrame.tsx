@@ -28,9 +28,9 @@ export const AppWindowFrame: FunctionComponent<AppWindowFrameProps> = (
       {/* header */}
       <div className="flex gap-2 p-2 bg-gray-700 px-2 rounded-t-xl w-full items-center shadow text-sm">
         <div className="grow-0 flex whitespace-nowrap gap-1 nowrap align-items-center">
-          <div className="rounded-full bg-gray-800 w-4 h-4 float-left"></div>
-          <div className="rounded-full bg-gray-500 w-4 h-4 float-left"></div>
-          <div className="rounded-full bg-gray-300 w-4 h-4 float-left"></div>
+          <div className="rounded-full bg-[#FF605C] w-4 h-4 float-left"></div>
+          <div className="rounded-full bg-[#FFBD44] w-4 h-4 float-left"></div>
+          <div className="rounded-full bg-[#00CA4E] w-4 h-4 float-left"></div>
         </div>
         <div
           className={`grow text-gray-200 text-center drop-shadow whitespace-nowrap overflow-hidden text-ellipsis px-4 ${variants.header.title}`}
