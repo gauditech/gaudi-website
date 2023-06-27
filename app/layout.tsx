@@ -10,6 +10,7 @@ import "@/app/css/style.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 // Prevent fontawesome from adding its CSS since we did it manually above:
 import { config } from "@fortawesome/fontawesome-svg-core";
+import Analytics from "@/components/Analytics";
 
 config.autoAddCss = false;
 
@@ -62,6 +63,8 @@ export default function RootLayout({
 
           <Footer />
         </div>
+
+        <Analytics />
       </body>
     </html>
   );
