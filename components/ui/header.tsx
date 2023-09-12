@@ -42,12 +42,12 @@ export default function Header() {
         >
           Docs
         </a>
-        {/* <a
-          href="https://github.com/gaudiorg"
+        <a
+          href="https://github.com/gauditech/gaudi"
           className="mx-2 text-base font-semibold opacity-80 last:mr-0 hover:opacity-100 sm:mx-4 hidden sm:block"
         >
           GitHub
-        </a> */}
+        </a>
       </nav>
     </header>
   );
