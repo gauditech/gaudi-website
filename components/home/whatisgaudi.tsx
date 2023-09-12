@@ -319,7 +319,6 @@ Commands:
                 <a
                   className="btn btn-lg btn-blue w-full xl:w-60"
                   href="https://docs.gaudi.tech"
-                  target="_blank"
                 >
                   Read the docs
                 </a>

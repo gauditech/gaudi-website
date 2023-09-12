@@ -30,7 +30,6 @@ export default function Hero() {
               <a
                 className="btn btn-lg btn-blue text-white border-2 w-full xl:w-60"
                 href="https://docs.gaudi.tech"
-                target="_blank"
               >
                 Read the docs
               </a>
